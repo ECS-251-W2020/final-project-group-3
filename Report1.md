@@ -5,3 +5,5 @@ Over the past week we met several times as a group to discuss the final topic. B
 
 ## Future Goals
 For the following week, we hope to resubmit our proposal and definitively decide on our topic.
+
+[Trello Board](https://trello.com/b/hbhwfHb7/ecs251-final-project)
