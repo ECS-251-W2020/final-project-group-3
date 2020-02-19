@@ -1,7 +1,7 @@
 # Report 2
 
 ## Weekly Meeting Notes 
-Over the weekend, we met with the primary goal of selecting a Raft library to use for our project.  We tried several libraries, but many were dated and had issues with installation including outdated dependences.
+Over the weekend, we met with the primary goal of selecting a Raft library to use for our project.  We tried several libraries, but many were dated and had issues with installation including outdated dependencies.
 
 We finally settled on Nuraft, a relatively recent Raft implementation in C++.  
 
