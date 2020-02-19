@@ -17,6 +17,8 @@ The example programs show some basic Raft functionality.  However, we intend to 
 
 We posted our goals to the project Trello board.  In the short term, we want to 1) finalize our cloud deployment strategy, 2) implement communication between compute instances, 3) modify the existing "echo" sample application to function as a terminal based chat application.
 
+Making modifications to the existing sample application will require all of us to become familiar with the Nuraft codebase.
+
 In the longer term, we are considering possible directions for this project.  One idea is to implement a web application that uses Nuraft.  This would include a more user-friendly, web based chat interface.
 
 
