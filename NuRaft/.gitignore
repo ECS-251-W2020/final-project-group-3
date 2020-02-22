@@ -5,6 +5,8 @@ Debug/
 *.user
 asio/
 nbproject/
+examples/
+build/
 *.obj
 *.o
 **/*.opendb
