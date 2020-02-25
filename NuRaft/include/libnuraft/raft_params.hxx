@@ -83,7 +83,7 @@ struct raft_params {
         , custom_election_quorum_size_(0)
         , leadership_expiry_(0)
         , allow_temporary_zero_priority_leader_(true)
-        , auto_forwarding_(false)
+        , auto_forwarding_(true)
         , use_bg_thread_for_urgent_commit_(true)
         , locking_method_type_(dual_mutex)
         , return_method_(blocking)
