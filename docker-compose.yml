@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+   s1:
+      image: ecs251/raft-final-project:nuraft
+      container_name: s1
+      volumes:
+              - ./src:/NuRaft/src
+      restart: always
+      ports:
+        - "8080:8080"
+      entrypoint: tail -f /dev/null
+   s2:
+      image: ecs251/raft-final-project:nuraft
+      container_name: s2
+      volumes:
+              - ./src:/NuRaft/src
+      restart: always
+      ports:
+        - "8081:8081"
+      entrypoint: tail -f /dev/null
+   s3:
+      image: ecs251/raft-final-project:nuraft
+      container_name: s3
+      volumes:
+              - ./src:/NuRaft/src
+      restart: always
+      ports:
+        - "8082:8082"
+      entrypoint: tail -f /dev/null
