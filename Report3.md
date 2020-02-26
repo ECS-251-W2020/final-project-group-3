@@ -9,7 +9,7 @@ The sample program we are working with is provided by Nuraft and is called "echo
 
 The program has some shortcomings.  It is terminal based and is not particularly user friendly.  Initially, only the leader had the capability to print messages, and then replicate those messages across the cluster.
 
-Nuraft was published recently (2019) by two programmers that work at Ebay.  We understand that Ebay users Nuraft internally for some purpose (we are not sure what it is used for).
+Nuraft was published recently (2019) by two programmers that work at Ebay.  We understand that Ebay users Nuraft internally for storage server data replication.
 
 One upside of Nuraft is we found that one of the code authors is willing to communicate with us over public Github posts.  It seems they want to encourage people to use Nuraft.
 
