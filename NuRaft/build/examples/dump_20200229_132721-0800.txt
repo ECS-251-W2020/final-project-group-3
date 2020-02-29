@@ -1,0 +1,30 @@
+When: 2020-02-29T13:27:21.543355-08:00
+
+ === Critical info (given by user): 0 bytes ===
+
+will not explore other threads (disabled by user)
+
+Thread a201 0
+(crashed here)
+0x10bb46f3c
+0x10bb475bc
+0x10bb47a8f
+0x7fff6831742d
+0xffff
+0x10bb3efea
+0x10bb3eb8f
+0x10bb41bbc
+0x7fff6811e7fd
+
+
+Thread a201 (crashed here)
+
+#0  0x000000010bb475bc in SimpleLoggerMgr::logStackBacktrace(unsigned long) at logger.cc:390
+#1  0x000000010bb47a8f in SimpleLoggerMgr::handleSegFault(int) at logger.cc:428
+#2  0x00007fff6831742d in _sigtramp() at libsystem_platform.dylib
+#3  0x000000000000ffff in 0x0() at ???
+#4  0x000000010bb3efea in echo_server::do_cmd(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&) at echo_server.cxx:0
+#5  0x000000010bb3eb8f in echo_server::loop() at example_common.hxx:0
+#6  0x000000010bb41bbc in main at echo_server.cxx:210
+#7  0x00007fff6811e7fd in start() at libdyld.dylib
+

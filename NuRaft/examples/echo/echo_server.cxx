@@ -80,7 +80,6 @@ void append_log(const std::string& cmd,
 
     // Do append.
     ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log} );
-
     if (!ret->get_accepted()) {
         // Log append rejected, usually because this node is not a leader.
         std::cout << "failed to replicate: "
@@ -128,6 +127,26 @@ void print_status(const std::string& cmd,
             << stuff.raft_instance_->get_committed_log_idx() << std::endl;
 }
 
+void print_chatHistory(const std::string& cmd,
+                  const std::vector<std::string>& tokens)
+{
+    ptr<log_store> ls = stuff.smgr_->load_log_store();
+    ptr<std::vector<ptr<log_entry>>> chatList = ls->log_entries(ls->start_index(), ls->next_slot());
+//     std::cout
+//                      << "chat length is " << chatList->size() << std::endl;
+    std::vector< ptr<srv_config> > configs;
+    stuff.raft_instance_->get_srv_config_all(configs);
+    int serverNum = configs.size();
+    std:: cout << "server size is " << serverNum << std::endl;
+    for (auto i = configs.begin(); i != configs.end(); ++i){
+                std:: cout << "dc id is "<< (*i)->get_endpoint() << std::endl;
+        }
+
+    for (auto i = chatList->begin()+serverNum; i != chatList->end(); ++i){
+            std:: cout <<(*i)->get_buf() << std::endl;
+    }
+}
+
 void help(const std::string& cmd,
           const std::vector<std::string>& tokens)
 {
@@ -150,7 +169,10 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     const std::string& cmd = tokens[0];
 
     if (cmd == "q" || cmd == "exit") {
+        //stuff.raft_instance_->stop_server();
+ //       stuff.raft_instance_->remove_srv(2);
         stuff.launcher_.shutdown(5);
+        stuff.reset();
         return false;
 
     } else if ( cmd == "msg" ) {
@@ -169,6 +191,8 @@ bool do_cmd(const std::vector<std::string>& tokens) {
 
     } else if ( cmd == "h" || cmd == "help" ) {
         help(cmd, tokens);
+    } else if ( cmd == "hist" ) {
+         print_chatHistory(cmd, tokens);
     }
     return true;
 }
