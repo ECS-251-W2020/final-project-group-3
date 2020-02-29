@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25fd17da-b53c-4cac-8394-26b6c4e8396e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/asio" beforeDir="false" afterPath="$PROJECT_DIR$/asio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asio/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../raft-chat/src/github.com/seriousben/raft-chat/raft-chat-1/0.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../raft-chat/src/github.com/seriousben/raft-chat/raft-chat-1/0000000000000000-0000000000000000.wal" beforeDir="false" />
-    </list>
+    <list default="true" id="25fd17da-b53c-4cac-8394-26b6c4e8396e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +34,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583002222728</updated>
-      <workItem from="1583002224472" duration="13724000" />
+      <workItem from="1583002224472" duration="13816000" />
     </task>
     <servers />
   </component>
