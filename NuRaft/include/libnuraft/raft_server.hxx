@@ -58,6 +58,7 @@ struct raft_params;
 class raft_server {
 public:
     static const int32 PRE_VOTE_REJECTION_LIMIT = 20;
+     ptr< cmd_result< ptr<buffer> > > send_msg_to_leader(ptr<req_msg>& req);
 
     struct init_options {
         init_options()
@@ -75,6 +76,7 @@ public:
     };
 
     raft_server(context* ctx, const init_options& opt = init_options());
+
 
     virtual ~raft_server();
 
@@ -451,6 +453,7 @@ public:
     static bool apply_config_log_entry(ptr<log_entry>& le,
                                        ptr<state_mgr>& s_mgr,
                                        std::string& err_msg);
+     void leave(int serverID);
 
 protected:
     typedef std::unordered_map<int32, ptr<peer>>::const_iterator peer_itor;
@@ -577,7 +580,7 @@ protected:
                         bool need_to_handle_commit_elem);
     void commit_conf(ulong idx_to_commit, ptr<log_entry>& le);
 
-    ptr< cmd_result< ptr<buffer> > > send_msg_to_leader(ptr<req_msg>& req);
+   
 
     void set_config(const ptr<cluster_config>& new_config);
     ptr<snapshot> get_last_snapshot() const;

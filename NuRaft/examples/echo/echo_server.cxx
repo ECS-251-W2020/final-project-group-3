@@ -20,6 +20,7 @@ limitations under the License.
 #include "logger_wrapper.hxx"
 
 #include "nuraft.hxx"
+#include "state_mgr.hxx"
 
 #include "test_common.h"
 
@@ -27,6 +28,15 @@ limitations under the License.
 #include <sstream>
 
 #include <stdio.h>
+#include "raft_server.hxx"
+
+#include "cluster_config.hxx"
+#include "context.hxx"
+#include "rpc_cli_factory.hxx"
+#include "tracer.hxx"
+
+#include <cassert>
+
 
 using namespace nuraft;
 
@@ -148,12 +158,65 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     if (!tokens.size()) return true;
 
     const std::string& cmd = tokens[0];
+    bool exit = false;
+    if (cmd == "leave"){
 
-    if (cmd == "q" || cmd == "exit") {
+        int myId = stuff.server_id_;
+        if (myId != stuff.raft_instance_->get_leader()){
+
+            ptr<buffer> buf(buffer::alloc(sz_int));
+            buf->put(myId);
+            buf->pos(0);
+            ptr<log_entry> log(cs_new<log_entry>(0, buf, log_val_type::cluster_server));
+            ptr<req_msg> req = cs_new<req_msg>
+                       ( (ulong)0, msg_type::remove_server_request, 0, 0,
+                         (ulong)0, (ulong)0, (ulong)0 );
+            req->log_entries().push_back(log);
+            stuff.raft_instance_->send_msg_to_leader(req);
+            
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            stuff.launcher_.shutdown(5);
+
+        } else {
+
+            stuff.raft_instance_->yield_leadership(true);
+           
+            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+            
+            ptr<buffer> buf(buffer::alloc(sz_int));
+            buf->put(myId);
+            buf->pos(0);
+            ptr<log_entry> log(cs_new<log_entry>(0, buf, log_val_type::cluster_server));
+            ptr<req_msg> req = cs_new<req_msg>
+                       ( (ulong)0, msg_type::remove_server_request, 0, 0,
+                         (ulong)0, (ulong)0, (ulong)0 );
+            req->log_entries().push_back(log);
+            stuff.raft_instance_->send_msg_to_leader(req);
+            
+           std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            stuff.launcher_.shutdown(5);
+
+        }
+        
+        return false;
+    }
+    else if ((cmd == "q" || cmd == "exit")) {
+        int myId = stuff.server_id_;
+
+        ptr<buffer> buf(buffer::alloc(sz_int));
+        buf->put(myId);
+        buf->pos(0);
+        ptr<log_entry> log(cs_new<log_entry>(0, buf, log_val_type::cluster_server));
+        ptr<req_msg> req = cs_new<req_msg>
+                       ( (ulong)0, msg_type::remove_server_request, 0, 0,
+                         (ulong)0, (ulong)0, (ulong)0 );
+        req->log_entries().push_back(log);
+        stuff.raft_instance_->send_msg_to_leader(req);        
         stuff.launcher_.shutdown(5);
+        std::this_thread::sleep_for(std::chrono::milliseconds(300));
         return false;
 
-    } else if ( cmd == "msg" ) {
+    }else if ( cmd == "msg" ) {
         // e.g.) msg hello world
         append_log(cmd, tokens);
 
@@ -172,6 +235,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     }
     return true;
 }
+
 
 }; // namespace echo_server;
 using namespace echo_server;

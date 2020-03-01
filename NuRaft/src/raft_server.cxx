@@ -1255,5 +1255,6 @@ ulong raft_server::store_log_entry(ptr<log_entry>& entry, ulong index) {
     return log_index;
 }
 
+
 } // namespace nuraft;
 
