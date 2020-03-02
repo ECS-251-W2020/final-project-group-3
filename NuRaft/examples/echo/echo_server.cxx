@@ -162,41 +162,26 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     if (cmd == "leave"){
 
         int myId = stuff.server_id_;
-        if (myId != stuff.raft_instance_->get_leader()){
 
-            ptr<buffer> buf(buffer::alloc(sz_int));
-            buf->put(myId);
-            buf->pos(0);
-            ptr<log_entry> log(cs_new<log_entry>(0, buf, log_val_type::cluster_server));
-            ptr<req_msg> req = cs_new<req_msg>
-                       ( (ulong)0, msg_type::remove_server_request, 0, 0,
-                         (ulong)0, (ulong)0, (ulong)0 );
-            req->log_entries().push_back(log);
-            stuff.raft_instance_->send_msg_to_leader(req);
+        if (myId == stuff.raft_instance_->get_leader()){
             
-            std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            stuff.launcher_.shutdown(5);
-
-        } else {
-
             stuff.raft_instance_->yield_leadership(true);
-           
             std::this_thread::sleep_for(std::chrono::milliseconds(300));
-            
-            ptr<buffer> buf(buffer::alloc(sz_int));
-            buf->put(myId);
-            buf->pos(0);
-            ptr<log_entry> log(cs_new<log_entry>(0, buf, log_val_type::cluster_server));
-            ptr<req_msg> req = cs_new<req_msg>
-                       ( (ulong)0, msg_type::remove_server_request, 0, 0,
-                         (ulong)0, (ulong)0, (ulong)0 );
-            req->log_entries().push_back(log);
-            stuff.raft_instance_->send_msg_to_leader(req);
-            
-           std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            stuff.launcher_.shutdown(5);
 
         }
+
+        ptr<buffer> buf(buffer::alloc(sz_int));
+        buf->put(myId);
+        buf->pos(0);
+        ptr<log_entry> log(cs_new<log_entry>(0, buf, log_val_type::cluster_server));
+        ptr<req_msg> req = cs_new<req_msg>
+                    ( (ulong)0, msg_type::remove_server_request, 0, 0,
+                    (ulong)0, (ulong)0, (ulong)0 );
+        req->log_entries().push_back(log);
+        stuff.raft_instance_->send_msg_to_leader(req);
+            
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        stuff.launcher_.shutdown(5);
         
         return false;
     }
