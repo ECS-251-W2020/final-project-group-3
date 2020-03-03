@@ -37,56 +37,9 @@ void central_server::connect(std::string address) {
  * then it should become the leader.
  ***************************************/ 
 void central_server::join() {
+
 }
 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
-/****************************************
- * Establishes a connection with the central
- * server with a given ip address
- * 
- * @input address: ip address of CS
- ***************************************/ 
 /****************************************
  * Destructor
  * 

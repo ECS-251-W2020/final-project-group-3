@@ -10,6 +10,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <string>
 #include <thread>
 #include <utility>
 #include "asio.hpp"
@@ -18,8 +19,65 @@ using asio::ip::tcp;
 
 const int max_length = 1024;
 
+enum MSG_TYPE { JOIN,
+                ADD_SERVER,
+                REPLY,
+                MSG_COUNT
+              };
+
+struct request {
+   MSG_TYPE m_type;
+   std::string m_message;
+};
+
+std::ostream &operator<<(std::ostream &out, request const &r) {
+   return out << r.m_type << ";" << r.m_message.length() << ";" << r.m_message;
+}
+
+std::istream &operator>>(std::istream &in, MSG_TYPE &m) {
+   unsigned int m_type;
+
+   if (!(in >> m_type))
+      return in;
+   if (m_type >= MSG_COUNT) {
+      in.setstate(in.rdstate() | std::ios::failbit);
+      return in;
+   }
+
+   m = static_cast<MSG_TYPE>(m_type);
+   return in;
+}
+
+std::istream &operator>>(std::istream &in, request &r) {
+   char separator;
+   size_t length;
+
+   bool ok = in >> r.m_type
+          && in >> separator && separator == ';'
+          && in >> length
+          && in >> separator && separator == ';'
+          ;
+   if (ok) { //WHY DOES THIS DO THIS????
+      r.m_message.resize(length);
+      in.read(&r.m_message[0], length);
+
+      r.m_message.resize(in.gcount());
+}
+
+   ok = ok && (r.m_message.length() == length);
+
+   if (!ok)
+      in.setstate(std::ios::failbit);
+
+   return in;
+}
+
 void session(tcp::socket sock)
 {
+  asio::streambuf buf;
+  asio::streambuf reply;
+  request received;
+
   try
   {
     for (;;)
@@ -28,12 +86,42 @@ void session(tcp::socket sock)
 
       asio::error_code error;
       size_t length = sock.read_some(asio::buffer(data), error);
+      //size_t n = sock.receive(buf);
+
+      //auto bytes_transferred = asio::read(sock, asio::buffer(data, max_length));
+      //std::cout << buf.data() << error << std::endl;
+      //std::cout << "Bytes transferred: " << bytes_transferred << std::endl;
+      std::cout << "Message length:    " << length << std::endl;
       if (error == asio::error::eof)
         break; // Connection closed cleanly by peer.
       else if (error)
         throw asio::system_error(error); // Some other error.
+      std::ostream(&buf) << data;
 
-      asio::write(sock, asio::buffer(data, length));
+      if (std::istream(&buf) >> received) {
+         std::cout << "Message Type: " << received.m_type << std::endl;
+         std::cout << "Message:      " << received.m_message << std::endl;
+
+         if (received.m_type == JOIN) {
+            std::ostream(&reply) << request{ REPLY, "You want to join!" };
+         } else {
+            std::ostream(&reply) << request{ REPLY, "Error!!" };
+         }
+      } else {
+         std::cout << "Couldn't receive request\n";
+      }
+      //buf.commit(length);
+
+      //std::cout << reply << std::endl;
+      //std::ostream(&buf) << reply;
+
+      size_t n = sock.send(reply.data());
+      reply.consume(n);
+      /*std::string test(data);
+      if (test == "hi") { data[0] = 'b'; } else { data[0] = 'l'; }
+      std::cout << test;
+      std::cout << std::endl;*/
+      //asio::write(sock, asio::buffer(data, length));
     }
   }
   catch (std::exception& e)
