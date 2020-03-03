@@ -13,11 +13,12 @@
 #ifndef CENTRAL_SERVER_HXX
 #define CENTRAL_SERVER_HXX
 
-#include <string>
-
 #include "asio.hpp"
+#include "central_server_common.hxx"
 
 using asio::ip::tcp;
+
+struct
 
 class central_server {
     public:

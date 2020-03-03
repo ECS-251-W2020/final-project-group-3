@@ -17,6 +17,8 @@ limitations under the License.
 
 #pragma once
 
+#include "central_server.hxx";
+
 using namespace nuraft;
 
 using raft_result = cmd_result< ptr<buffer> >;
@@ -255,3 +257,12 @@ void set_server_info(int argc, char** argv) {
     stuff.endpoint_ = stuff.addr_ + ":" + std::to_string(stuff.port_);
 }
 
+void connect_to_central_server() {
+    central_server cs;
+
+    cs.connect("35.192.121.162");
+    cs.join();
+
+    // Maybe return pointer of cs for program
+    // update leader of lobby in case of election?
+}

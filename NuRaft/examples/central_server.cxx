@@ -37,7 +37,42 @@ void central_server::connect(std::string address) {
  * then it should become the leader.
  ***************************************/ 
 void central_server::join() {
+    asio::streambuf buf;
+    asio::streambuf reply;
+    request test;
+    request reply_q;
 
+    try
+    {
+        std::ostream(&buf) << request{ JOIN, "Hello World!" };
+        size_t n = s.send(buf.data());
+
+        request received;
+
+        if (std::istream(&buf) >> received) {
+        std::cout << "Message Type: " << received.m_type << std::endl;
+        std::cout << "Message:      " << received.m_message << std::endl;
+        }  else {
+        std::cout << "Couldn't receive request\n";
+        }
+
+        buf.consume(n);
+
+        char reply_data[max_length];
+        asio::error_code error;
+        size_t reply_length = s.read_some(asio::buffer(reply_data), error);
+        std::cout << "And here!" << std::endl;
+        std::cout << "Reply is: ";
+        std::ostream(&reply) << reply_data;
+        if (std::istream(&reply) >> reply_q) {
+        std::cout << "Message: " << reply_q.m_message << std::endl;
+        std::cout << "Length: " << reply_length << std::endl;
+        }
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << "Exception: " << e.what() << "\n";
+    }    
 }
 
 /****************************************
