@@ -202,7 +202,6 @@ bool do_cmd(const std::vector<std::string>& tokens) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         stuff.launcher_.shutdown(5);
         
-        return false;
     }
     else if ((cmd == "q" || cmd == "exit")) {
         int myId = stuff.server_id_;

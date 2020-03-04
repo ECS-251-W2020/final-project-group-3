@@ -46,6 +46,7 @@ examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../include/libnuraft
 examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../include/libnuraft/state_machine.hxx
 examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../include/libnuraft/state_mgr.hxx
 examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../include/libnuraft/timer_task.hxx
+examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../src/tracer.hxx
 examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../tests/test_common.h
 examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../examples/echo/echo_server.cxx
 examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o: ../examples/echo/echo_state_machine.hxx

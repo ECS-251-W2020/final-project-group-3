@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="25fd17da-b53c-4cac-8394-26b6c4e8396e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/asio/asio/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/build/cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/calc_server" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/calc_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/echo_server" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/echo_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/srv1.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/srv1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/examples/srv2.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/examples/srv2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/build/key.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tests/asio_service_test" beforeDir="false" afterPath="$PROJECT_DIR$/build/tests/asio_service_test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/echo/echo_server.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/examples/echo/echo_server.cxx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583002222728</updated>
-      <workItem from="1583002224472" duration="17794000" />
+      <workItem from="1583002224472" duration="17985000" />
     </task>
     <servers />
   </component>

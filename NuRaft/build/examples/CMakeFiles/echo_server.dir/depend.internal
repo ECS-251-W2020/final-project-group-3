@@ -47,6 +47,7 @@ examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o
  ../include/libnuraft/state_machine.hxx
  ../include/libnuraft/state_mgr.hxx
  ../include/libnuraft/timer_task.hxx
+ ../src/tracer.hxx
  ../tests/test_common.h
  /Users/zixin/Documents/final-project-group-3/NuRaft/examples/echo/echo_server.cxx
  /Users/zixin/Documents/final-project-group-3/NuRaft/examples/echo/echo_state_machine.hxx
