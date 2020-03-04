@@ -7,6 +7,8 @@ Why?
 How? 
 Building off an existing Raft implementation (NuRaft).
 
+NuRaft is a lightweight Raft library written by Gene Zhang and Jung-Sang Ahn of EBay. 
+
 # Instructions
 
 Build NuRaft (see below).
