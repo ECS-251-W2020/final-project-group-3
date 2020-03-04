@@ -143,9 +143,8 @@ void loop() {
 #else
         std::cout << prompt;
 #endif
-        std::ecin.ignore();
+        std::eecin.ignore();
         std::cin.getline(cmd, 1000);
-        std::cout << "---" << cmd << "---" << std::endl;
         std::vector<std::string> tokens = tokenize(cmd);
         bool cont = do_cmd(tokens);
         if (!cont) break;
