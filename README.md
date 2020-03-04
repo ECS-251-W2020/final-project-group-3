@@ -9,21 +9,25 @@ Building off an existing Raft implementation (NuRaft).
 
 # Instructions
 
-Build NuRaft (see below)
+Build NuRaft (see below).
 
 Change directory to NuRaft/build/examples.
 
-run echo_server as follows:
+Run echo_server as follows:
 
 ./echo_server [server number] [IP Address]
 
-For testing on localhost, can type "./echo_server 1 localhost:10001" etc.
+For testing on localhost, can type "./echo_server 1 localhost:10001" etc.  
+
+To run a second instance, open a new terminal window.  CD to /examples.  Type "./echo_server 2 localhost:10002".
 
 Will be greeted by prompt.
 
-To add other servers to cluster, type "add [server number] [IP Address]"
+To add other servers to cluster, type "add [server number] [IP Address]".  
 
-To send message type "msg [message text]"
+Server that adds others is initial leader (only leader can add).
+
+To send message type "msg [message text]".
 
 To leave chat, type "leave"
 
