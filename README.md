@@ -31,7 +31,7 @@ Server that adds others is initial leader (only leader can add).
 
 To send message type "msg [message text]".
 
-To leave chat, type "leave"
+To leave chat, type "leave".
 
 # NuRaft
 
