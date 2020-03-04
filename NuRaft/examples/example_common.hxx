@@ -154,7 +154,7 @@ void loop() {
 
 //ask for username
 //void username() {
-//    std::cout << "What username would you like to you?" << std::endl;
+//    std::cout << "What username would you like to use?" << std::endl;
 //    std::cin >> stuff.server_user_;
 //}
 
