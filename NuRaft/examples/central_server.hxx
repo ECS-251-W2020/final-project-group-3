@@ -13,18 +13,15 @@
 #ifndef CENTRAL_SERVER_HXX
 #define CENTRAL_SERVER_HXX
 
-#include "asio.hpp"
-#include "central_server_common.hxx"
+#include <string>
+namespace cs {
 
-using asio::ip::tcp;
-
-struct
-
+class central_server_impl;
 class central_server {
     public:
         central_server();
         central_server(std::string address);
-        central_server(asio::io_context io_context, std::string address);
+        //central_server(asio::io_context io_context, std::string address);
         void connect(std::string address);
         void join_lobby();
         // FUTURE FEATURES
@@ -35,8 +32,7 @@ class central_server {
         void update_leader();
         ~central_server();
     private:
-        asio::io_context io_context;
-        tcp::socket socket;
+        central_server_impl* impl_;
 };
-
+};
 #endif

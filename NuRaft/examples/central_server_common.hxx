@@ -1,4 +1,4 @@
-#ifdef CENTRAL_SERVER_COMMON_HXX
+#ifndef CENTRAL_SERVER_COMMON_HXX
 #define CENTRAL_SERVER_COMMON_HXX
 
 #include <cstdlib>
@@ -23,7 +23,7 @@ struct request {
 
 std::ostream &operator<<(std::ostream &out, request const &r) {
    return out << r.m_type << ";" << r.m_message.length() << ";" << r.m_message;
-}
+};
 
 std::istream &operator>>(std::istream &in, MSG_TYPE &m) {
    unsigned int m_type;
@@ -37,7 +37,7 @@ std::istream &operator>>(std::istream &in, MSG_TYPE &m) {
 
    m = static_cast<MSG_TYPE>(m_type);
    return in;
-}
+};
 
 std::istream &operator>>(std::istream &in, request &r) {
    char separator;
@@ -53,7 +53,7 @@ std::istream &operator>>(std::istream &in, request &r) {
       in.read(&r.m_message[0], length);
 
       r.m_message.resize(in.gcount());
-}
+   }
 
    ok = ok && (r.m_message.length() == length);
 
@@ -62,4 +62,5 @@ std::istream &operator>>(std::istream &in, request &r) {
 
    return in;
 }
+
 #endif
