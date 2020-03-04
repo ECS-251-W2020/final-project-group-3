@@ -136,8 +136,7 @@ std::vector<std::string> tokenize(const char* str, char c = ' ') {
 void loop() {
     char cmd[1000];
     //std::string prompt = "user " + std::to_string(stuff.server_id_) + "> ";
-    std::string prompt = stuff.server_user_ + "> ";
-        //use username instead
+    std::string prompt = stuff.server_user_ + "> "; //uses username instead
     while (true) {
 #if defined(__linux__) || defined(__APPLE__)
         std::cout << _CLM_GREEN << prompt << _CLM_END;
@@ -151,12 +150,6 @@ void loop() {
         if (!cont) break;
     }
 }
-
-//ask for username
-//void username() {
-//    std::cout << "What username would you like to use?" << std::endl;
-//    std::cin >> stuff.server_user_;
-//}
 
 void init_raft(ptr<state_machine> sm_instance) {
     // Logger.
