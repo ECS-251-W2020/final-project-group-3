@@ -19,7 +19,7 @@ Run echo_server as follows:
 
 For testing on localhost, can type "./echo_server 1 localhost:10001" etc.  
 
-To run a second instance, open a new terminal windows.  CD to /examples.  Type "./echo_server 2 localhost:10002".
+To run a second instance, open a new terminal window.  CD to /examples.  Type "./echo_server 2 localhost:10002".
 
 Will be greeted by prompt.
 
