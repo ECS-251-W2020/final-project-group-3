@@ -137,10 +137,10 @@ void print_chatHistory(const std::string& cmd,
     std::vector< ptr<srv_config> > configs;
     stuff.raft_instance_->get_srv_config_all(configs);
     int serverNum = configs.size();
-    std:: cout << "server size is " << serverNum << std::endl;
-    for (auto i = configs.begin(); i != configs.end(); ++i){
-                std:: cout << "dc id is "<< (*i)->get_endpoint() << std::endl;
-        }
+//     std:: cout << "server size is " << serverNum << std::endl;
+//     for (auto i = configs.begin(); i != configs.end(); ++i){
+//                 std:: cout << "dc id is "<< (*i)->get_endpoint() << std::endl;
+//         }
 
     for (auto i = chatList->begin()+serverNum; i != chatList->end(); ++i){
             std:: cout <<(*i)->get_buf() << std::endl;
@@ -167,10 +167,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     if (!tokens.size()) return true;
 
     const std::string& cmd = tokens[0];
-
     if (cmd == "q" || cmd == "exit") {
-        //stuff.raft_instance_->stop_server();
- //       stuff.raft_instance_->remove_srv(2);
         stuff.launcher_.shutdown(5);
         stuff.reset();
         return false;
