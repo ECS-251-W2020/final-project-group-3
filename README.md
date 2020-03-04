@@ -7,7 +7,7 @@ Why?
 How? 
 Building off an existing Raft implementation (NuRaft).
 
-NuRaft is a lightweight Raft library written by Gene Zhang and Jung-Sang Ahn of EBay. 
+NuRaft is a lightweight Raft library written by Gene Zhang and Jung-Sang Ahn of EBay.  The authors based their work on prior work by Andy Chen. 
 
 # Instructions
 
@@ -34,8 +34,6 @@ To send message type "msg [message text]".
 To leave chat, type "leave"
 
 # NuRaft
-
-NuRaft is a lightweight Raft library written by Gene Zhang and Jung-Sang Ahn of EBay. It is derived from the [cornerstone](https://github.com/datatechnology/cornerstone) project, which is a very lightweight C++ implementation with minimum dependencies, originally written by [Andy Chen](https://github.com/andy-yx-chen).
 
 New features that are not described in the [original paper](https://raft.github.io/raft.pdf), but required for the real-world use cases in eBay, have been added. NuRaft authors believe those features are useful for others outside eBay as well.
 
