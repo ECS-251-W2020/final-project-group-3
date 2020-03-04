@@ -143,7 +143,7 @@ void loop() {
 #else
         std::cout << prompt;
 #endif
-        std::eecin.ignore();
+        std::cin.ignore();
         std::cin.getline(cmd, 1000);
         std::vector<std::string> tokens = tokenize(cmd);
         bool cont = do_cmd(tokens);
