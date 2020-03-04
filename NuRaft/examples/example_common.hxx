@@ -130,7 +130,7 @@ std::vector<std::string> tokenize(const char* str, char c = ' ') {
 
 void loop() {
     char cmd[1000];
-    std::string prompt = "calc " + std::to_string(stuff.server_id_) + "> ";
+    std::string prompt = "echo " + std::to_string(stuff.server_id_) + "> ";
     while (true) {
 #if defined(__linux__) || defined(__APPLE__)
         std::cout << _CLM_GREEN << prompt << _CLM_END;
@@ -208,7 +208,7 @@ void init_raft(ptr<state_machine> sm_instance) {
             std::cout << " done" << std::endl;
             return;
         }
-        std::cout << ".";
+        std::cout << "here ";
         fflush(stdout);
         TestSuite::sleep_ms(250);
     }
