@@ -30,6 +30,7 @@ struct server_stuff {
         , sm_(nullptr)
         , smgr_(nullptr)
         , raft_instance_(nullptr)
+        , server_user_("") //added for user
         {}
 
     void reset() {
@@ -65,6 +66,9 @@ struct server_stuff {
 
     // Raft server instance.
     ptr<raft_server> raft_instance_;
+    
+    //server username
+    std::string server_user_;
 };
 static server_stuff stuff;
 
@@ -94,6 +98,7 @@ void add_server(const std::string& cmd,
     std::cout << "async request is in progress (check with `list` command)"
               << std::endl;
 }
+
 
 void server_list(const std::string& cmd,
                  const std::vector<std::string>& tokens)
@@ -130,7 +135,8 @@ std::vector<std::string> tokenize(const char* str, char c = ' ') {
 
 void loop() {
     char cmd[1000];
-    std::string prompt = "echo " + std::to_string(stuff.server_id_) + "> ";
+    //std::string prompt = "user " + std::to_string(stuff.server_id_) + "> ";
+    std::string prompt = stuff.server_user_ + "> "; //uses username instead
     while (true) {
 #if defined(__linux__) || defined(__APPLE__)
         std::cout << _CLM_GREEN << prompt << _CLM_END;
@@ -152,7 +158,11 @@ void init_raft(ptr<state_machine> sm_instance) {
                                 ".log";
     ptr<logger_wrapper> log_wrap = cs_new<logger_wrapper>( log_file_name, 4 );
     stuff.raft_logger_ = log_wrap;
-
+    
+    //add username
+    std::cout << "What username would you like to use?" << std::endl;
+    std::cin >> stuff.server_user_;
+    
     // State machine.
     stuff.smgr_ = cs_new<inmem_state_mgr>( stuff.server_id_,
                                            stuff.endpoint_ );
