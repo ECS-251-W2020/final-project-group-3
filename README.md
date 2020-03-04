@@ -10,11 +10,14 @@ Building off an existing Raft implementation (NuRaft).
 # Instructions
 
 Build NuRaft (see below)
+
 Change directory to NuRaft/build/examples.
+
 run echo_server as follows:
+
 ./echo_server [server number] [IP Address]
 
-for testing on localhost, can type "./echo_server 1 localhost:10001" etc.
+For testing on localhost, can type "./echo_server 1 localhost:10001" etc.
 
 Will be greeted by prompt.
 
