@@ -177,7 +177,6 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     if (!tokens.size()) return true;
 
     const std::string& cmd = tokens[0];
-    bool exit = false;
     if (cmd == "leave"){
 
         int myId = stuff.server_id_;
