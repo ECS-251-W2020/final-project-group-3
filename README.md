@@ -35,7 +35,7 @@ To leave chat, type "leave"
 
 # NuRaft
 
-Raft implementation derived from the [cornerstone](https://github.com/datatechnology/cornerstone) project, which is a very lightweight C++ implementation with minimum dependencies, originally written by [Andy Chen](https://github.com/andy-yx-chen).
+NuRaft is a lightweight Raft library written by Gene Zhang and Jung-Sang Ahn of EBay. It is derived from the [cornerstone](https://github.com/datatechnology/cornerstone) project, which is a very lightweight C++ implementation with minimum dependencies, originally written by [Andy Chen](https://github.com/andy-yx-chen).
 
 New features that are not described in the [original paper](https://raft.github.io/raft.pdf), but required for the real-world use cases in eBay, have been added. NuRaft authors believe those features are useful for others outside eBay as well.
 
