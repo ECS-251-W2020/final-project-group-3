@@ -143,7 +143,7 @@ void loop() {
 #else
         std::cout << prompt;
 #endif
-       // std::cin.ignore();
+
         std::cin.getline(cmd, 1000);
         std::vector<std::string> tokens = tokenize(cmd);
         bool cont = do_cmd(tokens);
@@ -161,7 +161,7 @@ void init_raft(ptr<state_machine> sm_instance) {
     
     //add username
     std::cout << "What username would you like to use?" << std::endl;
-    
+
     char username[1000];
     std::cin.getline(username, 1000);
 
