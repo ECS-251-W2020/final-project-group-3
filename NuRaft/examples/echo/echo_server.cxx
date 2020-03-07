@@ -173,7 +173,7 @@ void help(const std::string& cmd,
     << "\n";
 }
 
-bool do_cmd(const std::vector<std::string>& tokens) {
+bool do_cmd(std::vector<std::string>& tokens) {
     if (!tokens.size()) return true;
 
     const std::string& cmd = tokens[0];
@@ -218,11 +218,20 @@ bool do_cmd(const std::vector<std::string>& tokens) {
         std::this_thread::sleep_for(std::chrono::milliseconds(300));
         return false;
 
-    }else if ( cmd == "msg" ) {
-        // e.g.) msg hello world
-        append_log(cmd, tokens);
+    } else if (cmd != "leave" && cmd != "q" && cmd != "exit" && cmd != "add" &&
+        cmd != "st" && cmd != "stat" && cmd != "ls" && cmd != "list" &&
+        cmd != "h" && cmd != "help" && cmd != "hist"){
+       
+        tokens.insert(tokens.begin(), cmd);
+       const std::string& cmd = "msg";
 
-    } else if ( cmd == "add" ) {
+        append_log(cmd, tokens);
+    }
+    //else if ( cmd == "msg" ) {
+        // e.g.) msg hello world
+       // append_log(cmd, tokens);
+
+     else if ( cmd == "add" ) {
         // e.g.) add 2 localhost:12345
         add_server(cmd, tokens);
 

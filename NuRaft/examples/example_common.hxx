@@ -120,7 +120,7 @@ void server_list(const std::string& cmd,
     }
 }
 
-bool do_cmd(const std::vector<std::string>& tokens);
+bool do_cmd(std::vector<std::string>& tokens);
 
 std::vector<std::string> tokenize(const char* str, char c = ' ') {
     std::vector<std::string> tokens;
