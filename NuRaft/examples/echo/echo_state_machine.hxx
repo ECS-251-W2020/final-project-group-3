@@ -16,7 +16,7 @@ limitations under the License.
 **************************************************************************/
 
 #pragma once
-
+//#include "example_common.hxx"
 #include "nuraft.hxx"
 
 #include <atomic>
@@ -40,8 +40,8 @@ public:
         std::string str = bs.get_str();
 
         // Just print.
-        std::cout << "pre_commit " << log_idx << ": "
-                  << str << std::endl;
+       // std::cout << "pre_commit " << log_idx << ": "
+        //          << str << std::endl;
         return nullptr;
     }
 
@@ -51,8 +51,10 @@ public:
         std::string str = bs.get_str();
 
         // Just print.
-        std::cout << "commit " << log_idx << ": "
-                  << str << std::endl;
+        //if ()
+       std::cout << str << std::endl;
+         //            << str << std::endl;
+       loop();
 
         // Update last committed index number.
         last_committed_idx_ = log_idx;
@@ -123,8 +125,8 @@ public:
     void create_snapshot(snapshot& s,
                          async_result<bool>::handler_type& when_done)
     {
-        std::cout << "create snapshot " << s.get_last_log_idx()
-                  << " term " << s.get_last_log_term() << std::endl;
+      //  std::cout << "create snapshot " << s.get_last_log_idx()
+      //            << " term " << s.get_last_log_term() << std::endl;
         // Clone snapshot from `s`.
         {   std::lock_guard<std::mutex> l(last_snapshot_lock_);
             ptr<buffer> snp_buf = s.serialize();

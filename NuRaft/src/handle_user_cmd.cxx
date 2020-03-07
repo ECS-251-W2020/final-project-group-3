@@ -56,7 +56,7 @@ ptr< cmd_result< ptr<buffer> > > raft_server::remove_srv(const int srv_id)
 }
 
 ptr< cmd_result< ptr<buffer> > > raft_server::append_entries
-                                 ( const std::vector< ptr<buffer> >& logs )
+                                 ( const std::vector< ptr<buffer> >& logs, int serverID )
 {
     if (logs.size() == 0) {
         ptr<buffer> result(nullptr);
@@ -76,10 +76,10 @@ ptr< cmd_result< ptr<buffer> > > raft_server::append_entries
         req->log_entries().push_back(log);
     }
 
-    return send_msg_to_leader(req);
+    return send_msg_to_leader(req, serverID);
 }
 
-ptr< cmd_result< ptr<buffer> > > raft_server::send_msg_to_leader(ptr<req_msg>& req)
+ptr< cmd_result< ptr<buffer> > > raft_server::send_msg_to_leader(ptr<req_msg>& req, serverID)
 {
     int32 leader_id = leader_;
     ptr<buffer> result = nullptr;

@@ -61,13 +61,13 @@ void handle_result(ptr<TestSuite::Timer> timer,
                   << std::endl;
         return;
     }
-    std::cout << "succeeded, "
-              << TestSuite::usToString( timer->getTimeUs() )
-              << std::endl;
+   // std::cout << "succeeded, "
+    //          << TestSuite::usToString( timer->getTimeUs() )
+      //        << std::endl;
 }
 
 void append_log(const std::string& cmd,
-                const std::vector<std::string>& tokens)
+                const std::vector<std::string>& tokens, int server_ID)
 {
     if (tokens.size() < 2) {
         std::cout << "too few arguments" << std::endl;
@@ -89,7 +89,7 @@ void append_log(const std::string& cmd,
     ptr<TestSuite::Timer> timer = cs_new<TestSuite::Timer>();
 
     // Do append.
-    ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log} );
+    ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log}, serverID );
     if (!ret->get_accepted()) {
         // Log append rejected, usually because this node is not a leader.
         std::cout << "failed to replicate: "
@@ -221,11 +221,17 @@ bool do_cmd(std::vector<std::string>& tokens) {
     } else if (cmd != "leave" && cmd != "q" && cmd != "exit" && cmd != "add" &&
         cmd != "st" && cmd != "stat" && cmd != "ls" && cmd != "list" &&
         cmd != "h" && cmd != "help" && cmd != "hist"){
+        std::string user = stuff.server_user_;
+        user += ":";
+        tokens.insert(tokens.begin(), user);
+       tokens.insert(tokens.begin(), "\n");
        
         tokens.insert(tokens.begin(), cmd);
+        //tokens.insert(tokens.begin(), stuff.server_user_);
+        //tokens.push_back("\n");
        const std::string& cmd = "msg";
 
-        append_log(cmd, tokens);
+        append_log(cmd, tokens, stuff.server_id_);
     }
     //else if ( cmd == "msg" ) {
         // e.g.) msg hello world
