@@ -162,8 +162,14 @@ void central_server_impl::handle_read(const asio::error_code ec, std::size_t byt
         std::cout << "Message from server!" << std::endl;
         std::ostream(&receiving) << reply_data;
         if (std::istream(&receiving) >> reply) {
-            std::cout << "Message: " << reply.m_message << std::endl;
-            std::cout << "Length: " << bytes_transferred << std::endl;        
+            if (reply.m_type == REPLY) {
+                std::cout << "Message: " << reply.m_message << std::endl;
+                std::cout << "Length: " << bytes_transferred << std::endl;        
+            } else if (reply.m_type == ADD_SERVER) {
+                std::cout << "Message:   " << reply.m_message << std::endl;
+                std::cout << "Port:      " << reply.m_port    << std::endl;
+                std::cout << "Server ID: " << reply.m_id      << std::endl;
+            }
         } 
 
         receive();
@@ -199,8 +205,9 @@ central_server::central_server()
  * of a lobby. If there is no leader yet,
  * then it should become the leader.
  ***************************************/ 
-void central_server::join_lobby() {
-    request message = { JOIN, "Hello World"};
+void central_server::join_lobby(int id, int port) {
+    request message = { JOIN, std::to_string(id), 
+       std::to_string(port), "I want to join!"};
     
     impl_->send(message);
 }

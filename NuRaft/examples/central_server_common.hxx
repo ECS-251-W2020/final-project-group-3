@@ -18,12 +18,15 @@ enum MSG_TYPE { JOIN,
 
 struct request {
    MSG_TYPE m_type;
+   std::string m_id;
+   std::string m_port;
    std::string m_message;
 };
 
 std::ostream &operator<<(std::ostream &out, request const &r) {
-   return out << r.m_type << ";" << r.m_message.length() << ";" << r.m_message;
-};
+   return out << r.m_type << ";" << r.m_id << ";" << r.m_port << ";"
+              << r.m_message.length() << ";" << r.m_message;
+}
 
 std::istream &operator>>(std::istream &in, MSG_TYPE &m) {
    unsigned int m_type;
@@ -39,11 +42,16 @@ std::istream &operator>>(std::istream &in, MSG_TYPE &m) {
    return in;
 };
 
+
 std::istream &operator>>(std::istream &in, request &r) {
    char separator;
    size_t length;
 
    bool ok = in >> r.m_type
+          && in >> separator && separator == ';'
+          && in >> r.m_id
+          && in >> separator && separator == ';'
+          && in >> r.m_port
           && in >> separator && separator == ';'
           && in >> length
           && in >> separator && separator == ';'
@@ -53,7 +61,7 @@ std::istream &operator>>(std::istream &in, request &r) {
       in.read(&r.m_message[0], length);
 
       r.m_message.resize(in.gcount());
-   }
+}
 
    ok = ok && (r.m_message.length() == length);
 
@@ -62,5 +70,6 @@ std::istream &operator>>(std::istream &in, request &r) {
 
    return in;
 }
+
 
 #endif

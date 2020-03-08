@@ -21,10 +21,10 @@ class central_server_impl;
 class central_server {
     public:
         central_server();
-        central_server(std::string address);
+        central_server();
         //central_server(asio::io_context io_context, std::string address);
         void connect(std::string address);
-        void join_lobby();
+        void join_lobby(int id, int port);
         // FUTURE FEATURES
         void connect(); // USING HOST NAME
         void join_lobby(int lobby_id);

@@ -31,11 +31,14 @@ enum MSG_TYPE { JOIN,
 
 struct request {
    MSG_TYPE m_type;
+   std::string m_id;
+   std::string m_port;
    std::string m_message;
 };
 
 std::ostream &operator<<(std::ostream &out, request const &r) {
-   return out << r.m_type << ";" << r.m_message.length() << ";" << r.m_message;
+   return out << r.m_type << ";" << r.m_id << ";" << r.m_port << ";"
+              << r.m_message.length() << ";" << r.m_message;
 }
 
 std::istream &operator>>(std::istream &in, MSG_TYPE &m) {
@@ -57,6 +60,10 @@ std::istream &operator>>(std::istream &in, request &r) {
    size_t length;
 
    bool ok = in >> r.m_type
+          && in >> separator && separator == ';'
+          && in >> r.m_id
+          && in >> separator && separator == ';'
+          && in >> r.m_port
           && in >> separator && separator == ';'
           && in >> length
           && in >> separator && separator == ';'
@@ -83,6 +90,7 @@ void session(tcp::socket sock)
   asio::streambuf leader_msg;
   request received;
   std::string address = sock.remote_endpoint().address().to_string();
+  unsigned short port = sock.remote_endpoint().port();
   
   sockets.insert({ address, std::make_shared<tcp::socket>(std::move(sock)) });
 
@@ -125,16 +133,17 @@ void session(tcp::socket sock)
 
          if (received.m_type == JOIN) {
             if (leaders[0] != address) {
-              std::ostream(&reply) << request{ REPLY, "You want to join!" };
-              std::ostream(&leader_msg) << request{ REPLY, "You need to add:" + address};
+              std::ostream(&reply) << request{ REPLY, "", "", "You want to join!" };
+              std::ostream(&leader_msg) << request{ ADD_SERVER, received.m_id, address 
+                 + ":" + received.m_port, "You need to add " + address };
 
               size_t l = sockets[leaders[0]]->send(leader_msg.data());
               leader_msg.consume(l);
             } else {
-              std::ostream(&reply) << request{ REPLY, "You are the leader!" };
+              std::ostream(&reply) << request{ REPLY, "", "", "You are the leader!" };
             }
          } else {
-            std::ostream(&reply) << request{ REPLY, "Error!!" };
+            std::ostream(&reply) << request{ REPLY, "", "", "Error!!" };
          }
       } else {
          std::cout << "Couldn't receive request\n";
