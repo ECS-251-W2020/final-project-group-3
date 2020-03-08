@@ -25,6 +25,7 @@ class central_server_impl : public std::enable_shared_from_this<central_server_i
         void connect(std::string address);
         void send(request message);
         void receive();
+        void handle_connect(const asio::error_code& ec);
         void handle_read(const asio::error_code ec, std::size_t bytes_transferred);
         std::shared_ptr<central_server_impl> sp() { return shared_from_this(); }
         ~central_server_impl();
@@ -55,16 +56,10 @@ central_server_impl::central_server_impl()
 void central_server_impl::connect(std::string address) {
     //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
-    io_context.run();
     asio::async_connect(socket, resolver.resolve(address, "5000"),
-       [this](std::error_code ec, asio::ip::tcp::endpoint) {
-           if (!ec) {
-              receive();
-           } // Maybe add check to close socket?
-       } 
-    );
+       std::bind($central_server_impl::handle_connect, shared_from_this(), std::placeholders::_1));
 
-    // std::thread([&io_context](){ io_context.run(); });
+    std::thread([this](){ io_context.run(); }).detach(); // Have to think about correctly joining later
     // std::thread([](std::shared_ptr<central_server_impl> cs){
     //     asio::streambuf receiving;
     //     request reply;
@@ -115,7 +110,7 @@ void central_server_impl::send(request message) {
 
         sending.consume(n);
 
-        char reply_data[max_length];
+        /*char reply_data[max_length];
         asio::error_code error;
         size_t reply_length = socket.read_some(asio::buffer(reply_data), error);
         std::cout << "And here!" << std::endl;
@@ -124,7 +119,7 @@ void central_server_impl::send(request message) {
         if (std::istream(&receiving) >> reply) {
         std::cout << "Message: " << reply.m_message << std::endl;
         std::cout << "Length: " << reply_length << std::endl;
-        }
+        }*/
     }
     catch (std::exception& e)
     {
@@ -136,11 +131,19 @@ void central_server_impl::send(request message) {
  * Receives a message from the central server
  ***************************************/ 
 void central_server_impl::receive() {
-    socket.async_read_some(asio::buffer(reply_data), 
+    socket.async_read_some(asio::buffer(reply_data, max_length), 
        std::bind(&central_server_impl::handle_read, shared_from_this(),
        std::placeholders::_1, std::placeholders::_2));
 }
 
+/****************************************
+ * Receives a message from the central server
+ ***************************************/ 
+void central_server_impl::handle_connect(const asio::error_code& ec) {
+    if (!ec) {
+        receive();
+    } // Maybe add check to close socket?
+}
 
 /****************************************
  * Receives a message from the central server
