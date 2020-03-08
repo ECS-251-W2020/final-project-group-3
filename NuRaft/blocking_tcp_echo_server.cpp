@@ -90,7 +90,6 @@ void session(tcp::socket sock)
   asio::streambuf leader_msg;
   request received;
   std::string address = sock.remote_endpoint().address().to_string();
-  unsigned short port = sock.remote_endpoint().port();
   
   sockets.insert({ address, std::make_shared<tcp::socket>(std::move(sock)) });
 

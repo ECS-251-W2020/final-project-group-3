@@ -190,7 +190,7 @@ int main(int argc, char** argv) {
     std::cout << "    Endpoint:     " << stuff.endpoint_ << std::endl;
     init_raft( cs_new<echo_state_machine>() );
     //connect_to_central_server();
-    app.join_lobby(stuff.server_id, stuff.endpoint_);
+    app.join_lobby(stuff.server_id_, stuff.endpoint_);
     loop();
 
     return 0;
