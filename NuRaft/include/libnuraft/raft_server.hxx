@@ -58,7 +58,8 @@ struct raft_params;
 class raft_server {
 public:
     static const int32 PRE_VOTE_REJECTION_LIMIT = 20;
-     ptr< cmd_result< ptr<buffer> > > send_msg_to_leader(ptr<req_msg>& req);
+    ptr< cmd_result< ptr<buffer> > > send_msg_to_leader(ptr<req_msg>& req);
+     ptr< cmd_result< ptr<buffer> > > send_msg_to_leader(ptr<req_msg>& req, int serverID);
 
     struct init_options {
         init_options()
@@ -149,8 +150,10 @@ public:
      *     In async mode, this function will return immediately, and the
      *     commit results will be set to returned `cmd_result` instance later.
      */
-    ptr< cmd_result< ptr<buffer> > >
+         ptr< cmd_result< ptr<buffer> > >
         append_entries(const std::vector< ptr<buffer> >& logs);
+    ptr< cmd_result< ptr<buffer> > >
+        append_entries(const std::vector< ptr<buffer> >& logs, int serverID);
 
     /**
      * Update the priority of given server.

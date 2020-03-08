@@ -44,7 +44,7 @@ namespace echo_server {
 
 static const raft_params::return_method_type CALL_TYPE
     = raft_params::blocking;
-//  = raft_params::async_handler;
+// raft_params::async_handler;
 
 #include "example_common.hxx"
 
@@ -75,7 +75,8 @@ void append_log(const std::string& cmd,
     }
 
     std::string cascaded_str;
-    for (size_t ii=1; ii<tokens.size(); ++ii) {
+    cascaded_str = tokens[1];
+    for (size_t ii=2; ii<tokens.size(); ++ii) {
         cascaded_str += tokens[ii] + " ";
     }
 
@@ -89,12 +90,12 @@ void append_log(const std::string& cmd,
     ptr<TestSuite::Timer> timer = cs_new<TestSuite::Timer>();
 
     // Do append.
-    ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log}, serverID );
+    ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log});
     if (!ret->get_accepted()) {
         // Log append rejected, usually because this node is not a leader.
         std::cout << "failed to replicate: "
-                  << ret->get_result_code() << ", "
-                  << TestSuite::usToString( timer->getTimeUs() )
+                //  << ret->get_result_code() << ", "
+                //  << TestSuite::usToString( timer->getTimeUs() )
                   << std::endl;
         return;
     }
@@ -153,8 +154,9 @@ void print_chatHistory(const std::string& cmd,
 //         }
 
     for (auto i = chatList->begin()+serverNum; i != chatList->end(); ++i){
-            std:: cout <<(*i)->get_buf() << std::endl;
+            std:: cout <<(*i)->get_buf();
     }
+    std::cout << std::endl;
 }
 
 void help(const std::string& cmd,
@@ -232,6 +234,7 @@ bool do_cmd(std::vector<std::string>& tokens) {
        const std::string& cmd = "msg";
 
         append_log(cmd, tokens, stuff.server_id_);
+        loop();
     }
     //else if ( cmd == "msg" ) {
         // e.g.) msg hello world
@@ -263,12 +266,21 @@ int main(int argc, char** argv) {
     if (argc < 3) usage(argc, argv);
 
     set_server_info(argc, argv);
+    int serverID = std::stoi(argv[1]);
+    std::cout << serverID << std::endl;
 
     std::cout << "    -- Echo Server with Raft --" << std::endl;
     std::cout << "               Version 0.1.0" << std::endl;
     std::cout << "    Server ID:    " << stuff.server_id_ << std::endl;
     std::cout << "    Endpoint:     " << stuff.endpoint_ << std::endl;
-    init_raft( cs_new<echo_state_machine>() );
+    std::cout << "What username would you like to use?" << std::endl;
+    
+    char username[1000];
+    std::cin.getline(username, 1000);
+
+    std::vector<std::string> tokens = tokenize(username);
+    std::string userName = tokens[0];
+    init_raft( cs_new<echo_state_machine>(serverID, userName) );
     loop();
 
     return 0;

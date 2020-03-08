@@ -18,6 +18,7 @@ limitations under the License.
 #pragma once
 //#include "example_common.hxx"
 #include "nuraft.hxx"
+#include "string"
 
 #include <atomic>
 #include <cassert>
@@ -28,11 +29,21 @@ using namespace nuraft;
 
 class echo_state_machine : public state_machine {
 public:
+    //int myServerID;
+    //std::string myUserName;
     echo_state_machine()
         : last_committed_idx_(0)
         {}
 
     ~echo_state_machine() {}
+
+    echo_state_machine(int serverID, std::string userName)
+    : last_committed_idx_(0){
+        myServerID = serverID;
+        myUserName = userName;
+
+    }
+    //int myServerID;
 
     ptr<buffer> pre_commit(const ulong log_idx, buffer& data) {
         // Extract string from `data.
@@ -52,9 +63,59 @@ public:
 
         // Just print.
         //if ()
-       std::cout << str << std::endl;
+       // std::cout << this.server_id_;
+
+        int semi = 0;
+
+        for (int i = 0; i < str.length(); i++){
+            if (str[i] == ':'){
+                semi = i;
+                break;
+            }
+        }
+       // std::cout << semi << std:: endl;
+       // std::cout << str[1] << std::endl;
+
+       // std::cout << myUserName.length();
+
+        bool flag = true;
+
+        for (int i = 1; i < myUserName.length() + 1; i++){
+
+            if (myUserName[i-1] != str[i]){
+                flag = false;
+            }
+
+        }
+        if (flag == true && myUserName.length() + 1 == semi){
+
+        }else {
+            std::string prompt = myUserName + "> ";
+            str.erase(0,1);
+            std::cout << str << std::endl;
+           // std::cout << prompt;
+        }
+        //int sLength = myUserName.length();
+
+        //std::cout << sLength << std::endl;
+
+        //std::string sender = str.substr(0, sLength + 1);
+        //std::cout << sender << std::endl;
+        //std::cout << myUserName << std::endl;
+
+        //int comparison = sender.compare(myUserName);
+        //std::cout << comparison << std::endl;
+
+      //  bool sameness = 0;
+      //  for (int i = 0; i < sLength; i++){
+          //  if 
+       // }
+
+        //if (sender == myUserName){
+        //    std::cout << "same" << std::endl;
+       // }
          //            << str << std::endl;
-       loop();
+       //loop();
 
         // Update last committed index number.
         last_committed_idx_ = log_idx;
