@@ -109,10 +109,14 @@ void session(tcp::socket sock)
       //std::cout << buf.data() << error << std::endl;
       //std::cout << "Bytes transferred: " << bytes_transferred << std::endl;
       std::cout << "Message length:    " << length << std::endl;
-      if (error == asio::error::eof)
+      if (error == asio::error::eof){
+        sockets[address].erase(address);
         break; // Connection closed cleanly by peer.
-      else if (error)
+      }
+      else if (error) {
+        sockets[address].erase(address);
         throw asio::system_error(error); // Some other error.
+      }
       std::ostream(&buf) << data;
 
       if (std::istream(&buf) >> received) {
