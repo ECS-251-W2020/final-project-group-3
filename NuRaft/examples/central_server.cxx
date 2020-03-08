@@ -119,7 +119,7 @@ central_server_impl::~central_server_impl() {
  ***************************************/ 
 central_server::central_server() 
    : impl_(new central_server_impl()) {
-       impl_->connect("35.192.121.162");
+       impl_->connect("35.188.155.151");
    }
 
 /****************************************

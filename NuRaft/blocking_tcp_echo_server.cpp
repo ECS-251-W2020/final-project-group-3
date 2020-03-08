@@ -8,6 +8,8 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 //
 
+#include <map>
+#include <vector>
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -18,6 +20,8 @@
 using asio::ip::tcp;
 
 const int max_length = 1024;
+std::map<int lobby, std::string address>> leaders;
+std::map<std::string address, std::shared_ptr<tcp::socket>> sockets;
 
 enum MSG_TYPE { JOIN,
                 ADD_SERVER,
@@ -77,7 +81,19 @@ void session(tcp::socket sock)
   asio::streambuf buf;
   asio::streambuf reply;
   request received;
+  std::string address = sock.remote_endpoint().address().to_string();
+  
+  sockets.insert({ address, std::shared_ptr<tcp::socket>(std::move(sock)) });
 
+  if (leaders.find(0) == leaders.end()) {
+    std::cout << "New leader: " << address << std::endl;
+    leaders.insert({ 0, address });
+  } else {
+    std::cout << address << " is leader of lobby 0" << std::endl;
+  }
+  // connections.push_back(std::shared_ptr<tcp::socket>(std::move(sock)));
+  // std::shared_ptr<tcp::socket> = 
+  //    std::shared_ptr<tcp::socket>(std::move(sock));
   try
   {
     for (;;)
@@ -85,7 +101,7 @@ void session(tcp::socket sock)
       char data[max_length];
 
       asio::error_code error;
-      size_t length = sock.read_some(asio::buffer(data), error);
+      size_t length = sockets[address].read_some(asio::buffer(data), error);
       //size_t n = sock.receive(buf);
 
       //auto bytes_transferred = asio::read(sock, asio::buffer(data, max_length));
@@ -115,7 +131,7 @@ void session(tcp::socket sock)
       //std::cout << reply << std::endl;
       //std::ostream(&buf) << reply;
 
-      size_t n = sock.send(reply.data());
+      size_t n = sockets[address].send(reply.data());
       reply.consume(n);
       /*std::string test(data);
       if (test == "hi") { data[0] = 'b'; } else { data[0] = 'l'; }
