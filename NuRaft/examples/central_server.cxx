@@ -206,8 +206,7 @@ central_server::central_server()
  * then it should become the leader.
  ***************************************/ 
 void central_server::join_lobby(int id, int port) {
-    request message = { JOIN, std::to_string(id), 
-       std::to_string(port), "I want to join!"};
+    request message = { JOIN, id, port, "I want to join!"};
     
     impl_->send(message);
 }

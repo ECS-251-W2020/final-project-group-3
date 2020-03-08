@@ -31,9 +31,9 @@ enum MSG_TYPE { JOIN,
 
 struct request {
    MSG_TYPE m_type;
-   std::string m_id;
-   std::string m_port;
-   std::string m_message;
+   int m_id;
+   int m_port;
+   int m_message;
 };
 
 std::ostream &operator<<(std::ostream &out, request const &r) {
@@ -132,17 +132,17 @@ void session(tcp::socket sock)
 
          if (received.m_type == JOIN) {
             if (leaders[0] != address) {
-              std::ostream(&reply) << request{ REPLY, "", "", "You want to join!" };
-              std::ostream(&leader_msg) << request{ ADD_SERVER, received.m_id, address 
-                 + ":" + received.m_port, "You need to add " + address };
+              std::ostream(&reply) << request{ REPLY, 0, 0, "You want to join!" };
+              std::ostream(&leader_msg) << request{ ADD_SERVER, received.m_id,  
+                 eceived.m_port, "You need to add " + address };
 
               size_t l = sockets[leaders[0]]->send(leader_msg.data());
               leader_msg.consume(l);
             } else {
-              std::ostream(&reply) << request{ REPLY, "", "", "You are the leader!" };
+              std::ostream(&reply) << request{ REPLY, 0, 0, "You are the leader!" };
             }
          } else {
-            std::ostream(&reply) << request{ REPLY, "", "", "Error!!" };
+            std::ostream(&reply) << request{ REPLY, 0, 0, "Error!!" };
          }
       } else {
          std::cout << "Couldn't receive request\n";

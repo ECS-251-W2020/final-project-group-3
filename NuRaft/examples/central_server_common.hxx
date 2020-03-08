@@ -18,8 +18,8 @@ enum MSG_TYPE { JOIN,
 
 struct request {
    MSG_TYPE m_type;
-   std::string m_id;
-   std::string m_port;
+   int m_id;
+   int m_port;
    std::string m_message;
 };
 
