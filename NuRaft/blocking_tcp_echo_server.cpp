@@ -33,7 +33,7 @@ struct request {
    MSG_TYPE m_type;
    int m_id;
    int m_port;
-   int m_message;
+   std::string m_message;
 };
 
 std::ostream &operator<<(std::ostream &out, request const &r) {
