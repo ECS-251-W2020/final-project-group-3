@@ -56,7 +56,7 @@ void central_server_impl::connect(std::string address) {
     //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
     asio::async_connect(socket, resolver.resolve(address, "5000"),
-       [this](std::error_code ec, tcp::endpoint) {
+       [this](std::error_code ec, asio::ip::tcp::endpoint) {
            if (!ec) {
               receive();
            } // Maybe add check to close socket?
@@ -137,8 +137,8 @@ void central_server_impl::send(request message) {
  ***************************************/ 
 void central_server_impl::receive() {
     socket.async_read_some(asio::buffer(reply_data), 
-       std::bind(&central_server_impl::handle_read, shared_from_this,
-       asio::placeholders::error, asio::placeholders::bytes_transferred));
+       std::bind(&central_server_impl::handle_read, shared_from_this(),
+       std::placeholders::_1, std::placeholders::_2));
 }
 
 
@@ -147,15 +147,15 @@ void central_server_impl::receive() {
  ***************************************/ 
 void central_server_impl::handle_read(const asio::error_code ec, std::size_t bytes_transferred) {
     if (!ec) {
-        request         reply
+        request         reply;
         asio::streambuf receiving;
 
         std::cout << "Listening to socket: " << socket.remote_endpoint().address().to_string() << std::endl;
 
-        if (error == asio::error::eof)
+        if (ec == asio::error::eof)
             socket.close();
-        else if (error)
-            throw asio::system_error(error);
+        else if (ec)
+            throw asio::system_error(ec);
         std::cout << "Message from server!" << std::endl;
         std::ostream(&receiving) << reply_data;
         if (std::istream(&receiving) >> reply) {
@@ -165,7 +165,7 @@ void central_server_impl::handle_read(const asio::error_code ec, std::size_t byt
 
         receive();
     } else {
-        socket.close
+        socket.close();
     }
 }
 
