@@ -24,7 +24,7 @@ class central_server_impl {
         central_server_impl();
         void connect(std::string address);
         void send(request message);
-        std::shared_ptr<central_server_impl> sp() { return shared_from_this(); }
+        std::shared_ptr<central_server_impl> sp() { return std::shared_from_this(); }
         ~central_server_impl();
     private:
         asio::io_context        io_context;
@@ -53,7 +53,7 @@ void central_server_impl::connect(std::string address) {
     //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
     asio::connect(socket, resolver.resolve(address, "5000"));
-    std::thread([](std::shared_ptr<central_server_impl>) cs{
+    std::thread([](std::shared_ptr<central_server_impl> cs){
         asio::streambuf receiving;
         request reply;
 
