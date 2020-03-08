@@ -80,6 +80,7 @@ void session(tcp::socket sock)
 {
   asio::streambuf buf;
   asio::streambuf reply;
+  asio::streambuf leader_msg;
   request received;
   std::string address = sock.remote_endpoint().address().to_string();
   
@@ -119,7 +120,12 @@ void session(tcp::socket sock)
          std::cout << "Message:      " << received.m_message << std::endl;
 
          if (received.m_type == JOIN) {
-            std::ostream(&reply) << request{ REPLY, "You want to join!" };
+            if (leaders(0) != address) {
+              std::ostream(&reply) << request{ REPLY, "You want to join!" };
+              std::ostream(&leader_msg) << request{ ADD, "You need to add:" + address};
+            } else {
+              std::ostream(&reply) << request{ REPLY, "You are the leader!" };
+            }
          } else {
             std::ostream(&reply) << request{ REPLY, "Error!!" };
          }
