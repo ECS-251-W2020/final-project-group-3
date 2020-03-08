@@ -55,6 +55,7 @@ central_server_impl::central_server_impl()
 void central_server_impl::connect(std::string address) {
     //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
+    io_context.run();
     asio::async_connect(socket, resolver.resolve(address, "5000"),
        [this](std::error_code ec, asio::ip::tcp::endpoint) {
            if (!ec) {
@@ -63,7 +64,6 @@ void central_server_impl::connect(std::string address) {
        } 
     );
 
-    io_context.run();
     // std::thread([&io_context](){ io_context.run(); });
     // std::thread([](std::shared_ptr<central_server_impl> cs){
     //     asio::streambuf receiving;
