@@ -57,7 +57,7 @@ void central_server_impl::connect(std::string address) {
         asio::streambuf receiving;
         request reply;
 
-        std::cout << "Listening to socket: " << cs->socket.remote_endpoint().address().to_string(); << std::endl;
+        std::cout << "Listening to socket: " << cs->socket.remote_endpoint().address().to_string() << std::endl;
 
         for(;;) {
             char reply_data[max_length];
