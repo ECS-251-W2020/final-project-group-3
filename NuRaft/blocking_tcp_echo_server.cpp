@@ -134,7 +134,7 @@ void session(tcp::socket sock)
             if (leaders[0] != address) {
               std::ostream(&reply) << request{ REPLY, 0, 0, "You want to join!" };
               std::ostream(&leader_msg) << request{ ADD_SERVER, received.m_id,  
-                 eceived.m_port, "You need to add " + address };
+                 received.m_port, "You need to add " + address };
 
               size_t l = sockets[leaders[0]]->send(leader_msg.data());
               leader_msg.consume(l);
