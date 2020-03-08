@@ -19,12 +19,12 @@ namespace cs {
  * 
  * Necessary to prevent asio compile issues
  ***************************************/ 
-class central_server_impl {
+class central_server_impl : public std::enable_shared_from_this<central_server_impl> {
     public:
         central_server_impl();
         void connect(std::string address);
         void send(request message);
-        std::shared_ptr<central_server_impl> sp() { return std::shared_from_this(); }
+        std::shared_ptr<central_server_impl> sp() { return shared_from_this(); }
         ~central_server_impl();
     private:
         asio::io_context        io_context;
