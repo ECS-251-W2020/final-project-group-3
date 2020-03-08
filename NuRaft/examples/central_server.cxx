@@ -159,6 +159,6 @@ void central_server::join_lobby() {
  * before the instance is destroyed
  ***************************************/ 
 central_server::~central_server() {
-    delete impl_;
+    //delete impl_;
 }
 };
