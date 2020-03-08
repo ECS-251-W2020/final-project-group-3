@@ -57,7 +57,7 @@ void central_server_impl::connect(std::string address) {
     //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
     asio::async_connect(socket, resolver.resolve(address, "5000"),
-       std::bind($central_server_impl::handle_connect, shared_from_this(), std::placeholders::_1));
+       std::bind(&central_server_impl::handle_connect, shared_from_this(), std::placeholders::_1));
 
     std::thread([this](){ io_context.run(); }).detach(); // Have to think about correctly joining later
     // std::thread([](std::shared_ptr<central_server_impl> cs){
