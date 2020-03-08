@@ -9,6 +9,7 @@
  ***************************************/ 
 #include "central_server.hxx"
 #include "central_server_common.hxx"
+#include "example_common.hxx"
 #include "asio.hpp"
 
 //using asio::ip::tcp;
@@ -169,6 +170,8 @@ void central_server_impl::handle_read(const asio::error_code ec, std::size_t byt
                 std::cout << "Message:   " << reply.m_message << std::endl;
                 std::cout << "Port:      " << reply.m_port    << std::endl;
                 std::cout << "Server ID: " << reply.m_id      << std::endl;
+                std::vector<std::string> tokens = tokenize(cmd);
+                do_cmd(tokens);
             }
         } 
 
