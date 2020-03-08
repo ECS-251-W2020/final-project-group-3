@@ -27,8 +27,8 @@ limitations under the License.
 #include <sstream>
 
 #include <stdio.h>
-//#include "central_server.hxx"
-#include "central_server_functions.hxx"
+#include "central_server.hxx"
+//#include "central_server_functions.hxx"
 
 using namespace nuraft;
 
@@ -181,7 +181,7 @@ using namespace echo_server;
 int main(int argc, char** argv) {
     if (argc < 3) usage(argc, argv);
 
-    //cs::central_server app;
+    cs::central_server app;
     set_server_info(argc, argv);
 
     std::cout << "    -- Echo Server with Raft --" << std::endl;
@@ -189,8 +189,8 @@ int main(int argc, char** argv) {
     std::cout << "    Server ID:    " << stuff.server_id_ << std::endl;
     std::cout << "    Endpoint:     " << stuff.endpoint_ << std::endl;
     init_raft( cs_new<echo_state_machine>() );
-    connect_to_central_server();
-    //app.join_lobby();
+    //connect_to_central_server();
+    app.join_lobby();
     loop();
 
     return 0;

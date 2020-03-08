@@ -14,6 +14,7 @@
 #define CENTRAL_SERVER_HXX
 
 #include <string>
+#include <memory>
 namespace cs {
 
 class central_server_impl;
@@ -32,8 +33,8 @@ class central_server {
         void update_leader();
         ~central_server();
     private:
-        //std::shared_ptr<central_server_impl> impl_;
-        central_server_impl* impl_;
+        std::shared_ptr<central_server_impl> impl_;
+        //central_server_impl* impl_;
 };
 };
 #endif

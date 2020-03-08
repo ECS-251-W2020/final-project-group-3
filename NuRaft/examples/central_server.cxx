@@ -70,7 +70,7 @@ void central_server_impl::connect(std::string address) {
                 std::cout << "Length: " << reply_length << std::endl;        
             } 
         }
-    }, sp()).detach();
+    }, shared_from_this()).detach();
 }
 
 /****************************************
@@ -137,7 +137,7 @@ central_server_impl::~central_server_impl() {
  * Simply sets up the socket variable
  ***************************************/ 
 central_server::central_server() 
-   : impl_(new central_server_impl()) {
+   : impl_(std::make_shared<central_server_impl>()) {
        impl_->connect("35.188.155.151");
    }
 
