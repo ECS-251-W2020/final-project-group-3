@@ -115,9 +115,10 @@ void central_server_impl::listen_to_server() {
         std::cout << "Message from server!" << std::endl;
         std::ostream(&receiving) << reply_data;
         if (std::istream(&receiving) >> reply) {
-        std::cout << "Message: " << reply.m_message << std::endl;
-        std::cout << "Length: " << reply_length << std::endl;        
-    } 
+            std::cout << "Message: " << reply.m_message << std::endl;
+            std::cout << "Length: " << reply_length << std::endl;        
+        } 
+    }
 }
 
 /****************************************
