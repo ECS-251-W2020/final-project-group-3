@@ -32,6 +32,7 @@ class central_server {
         void update_leader();
         ~central_server();
     private:
+        //std::shared_ptr<central_server_impl> impl_;
         central_server_impl* impl_;
 };
 };

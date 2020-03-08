@@ -24,7 +24,7 @@ class central_server_impl {
         central_server_impl();
         void connect(std::string address);
         void send(request message);
-        void listen_to_server();
+        std::shared_ptr<central_server_impl> sp() { return shared_from_this(); }
         ~central_server_impl();
     private:
         asio::io_context        io_context;
@@ -53,8 +53,24 @@ void central_server_impl::connect(std::string address) {
     //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
     asio::connect(socket, resolver.resolve(address, "5000"));
+    std::thread([](std::shared_ptr<central_server_impl>) cs{
+        asio::streambuf receiving;
+        request reply;
 
-    std::thread(listen_to_server);
+        std::cout << "Listening to socket: " << cs->socket.remote_endpoint().address().to_string(); << std::endl;
+
+        for(;;) {
+            char reply_data[max_length];
+            asio::error_code error;
+            size_t reply_length = cs->socket.read_some(asio::buffer(reply_data), error);
+            std::cout << "Message from server!" << std::endl;
+            std::ostream(&receiving) << reply_data;
+            if (std::istream(&receiving) >> reply) {
+                std::cout << "Message: " << reply.m_message << std::endl;
+                std::cout << "Length: " << reply_length << std::endl;        
+            } 
+        }
+    }, sp()).detach();
 }
 
 /****************************************
@@ -98,27 +114,6 @@ void central_server_impl::send(request message) {
     {
         std::cerr << "Exception: " << e.what() << "\n";
     }    
-}
-
-/****************************************
- * Listen to server
- * 
- ***************************************/ 
-void central_server_impl::listen_to_server() {
-    asio::streambuf receiving;
-    request reply;
-
-    for(;;) {
-        char reply_data[max_length];
-        asio::error_code error;
-        size_t reply_length = socket.read_some(asio::buffer(reply_data), error);
-        std::cout << "Message from server!" << std::endl;
-        std::ostream(&receiving) << reply_data;
-        if (std::istream(&receiving) >> reply) {
-            std::cout << "Message: " << reply.m_message << std::endl;
-            std::cout << "Length: " << reply_length << std::endl;        
-        } 
-    }
 }
 
 /****************************************
