@@ -8,6 +8,7 @@
 #include <iostream>
 #include <thread>
 #include <utility>
+#include <functional>
 
 const int max_length = 1024;
 
