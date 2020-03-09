@@ -14,6 +14,7 @@
 #define CENTRAL_SERVER_HXX
 
 #include <string>
+#include <vector>
 #include <memory>
 namespace cs {
 
