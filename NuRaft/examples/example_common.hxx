@@ -269,4 +269,3 @@ void set_server_info(int argc, char** argv) {
     stuff.addr_ = str.substr(0, pos);
     stuff.endpoint_ = stuff.addr_ + ":" + std::to_string(stuff.port_);
 }
-

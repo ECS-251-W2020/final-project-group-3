@@ -13,7 +13,8 @@ target_link_libraries(calc_server
 add_executable(echo_server
                echo/echo_server.cxx
                logger.cc
-               in_memory_log_store.cxx)
+               in_memory_log_store.cxx
+               central_server.cxx)
 add_dependencies(echo_server
                  static_lib)
 target_link_libraries(echo_server
