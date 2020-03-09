@@ -129,6 +129,7 @@ void central_server_impl::handle_read(const asio::error_code ec, std::size_t byt
                 std::stringstream ss(reply.m_message);
                 std::string intermediate;
 
+                if (tokens.size() > 0) { tokens.clear(); } // Make sure empty
                 while(getline(ss, intermediate, ' ')) {
                     tokens.push_back(intermediate);
                 }
