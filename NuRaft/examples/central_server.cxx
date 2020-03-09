@@ -13,7 +13,7 @@
 
 namespace cs {
 
-typedef bool (*callback_function)(const std::vector<std::string>&);
+typedef bool (*callback_function)(std::vector<std::string>&);
 
 /****************************************
  * Central Server Implementation

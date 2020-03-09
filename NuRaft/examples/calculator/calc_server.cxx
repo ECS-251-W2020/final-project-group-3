@@ -164,7 +164,7 @@ void help(const std::string& cmd,
     << "\n";
 }
 
-bool do_cmd(const std::vector<std::string>& tokens) {
+bool do_cmd(std::vector<std::string>& tokens) {
     if (!tokens.size()) return true;
 
     const std::string& cmd = tokens[0];

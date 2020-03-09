@@ -62,9 +62,9 @@ void handle_result(ptr<TestSuite::Timer> timer,
                   << std::endl;
         return;
     }
-    std::cout << "succeeded, "
-              << TestSuite::usToString( timer->getTimeUs() )
-              << std::endl;
+   //std::cout << "succeeded, "
+      //        << TestSuite::usToString( timer->getTimeUs() )
+       //       << std::endl;
 }
 
 void append_log(const std::string& cmd,
@@ -93,10 +93,10 @@ void append_log(const std::string& cmd,
     ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log} );
     if (!ret->get_accepted()) {
         // Log append rejected, usually because this node is not a leader.
-        std::cout << "failed to replicate: "
-                  << ret->get_result_code() << ", "
-                  << TestSuite::usToString( timer->getTimeUs() )
-                  << std::endl;
+       // std::cout << "failed to replicate: "
+        //          << ret->get_result_code() << ", "
+        //          << TestSuite::usToString( timer->getTimeUs() )
+        //         << std::endl;
         return;
     }
     // Log append accepted, but that doesn't mean the log is committed.
@@ -174,7 +174,7 @@ void help(const std::string& cmd,
     << "\n";
 }
 
-bool do_cmd(const std::vector<std::string>& tokens) {
+bool do_cmd(std::vector<std::string>& tokens) {
     if (!tokens.size()) return true;
 
     const std::string& cmd = tokens[0];
@@ -221,6 +221,9 @@ bool do_cmd(const std::vector<std::string>& tokens) {
 
     }else if ( cmd == "msg" ) {
         // e.g.) msg hello world
+        std::string user = stuff.server_user_;
+        user += ":";
+        tokens.insert(tokens.begin() + 1, user);
         append_log(cmd, tokens);
 
     } else if ( cmd == "add" ) {
@@ -255,7 +258,17 @@ int main(int argc, char** argv) {
     std::cout << "               Version 0.1.0" << std::endl;
     std::cout << "    Server ID:    " << stuff.server_id_ << std::endl;
     std::cout << "    Endpoint:     " << stuff.endpoint_ << std::endl;
-    init_raft( cs_new<echo_state_machine>() );
+    std::cout << "What username would you like to use?" << std::endl;
+    
+    char username[1000];
+    std::cin.getline(username, 1000);
+
+    std::vector<std::string> tokens = tokenize(username);
+    std::string userName = tokens[0];
+    int serverID = std::stoi(argv[1]);
+    init_raft( cs_new<echo_state_machine>(serverID, userName) );
+
+
     if (stuff.addr_ != "localhost") {
         app.join_lobby(stuff.server_id_, stuff.port_);
     }

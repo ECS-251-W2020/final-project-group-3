@@ -120,7 +120,7 @@ void server_list(const std::string& cmd,
     }
 }
 
-bool do_cmd(const std::vector<std::string>& tokens);
+bool do_cmd(std::vector<std::string>& tokens);
 
 std::vector<std::string> tokenize(const char* str, char c = ' ') {
     std::vector<std::string> tokens;
@@ -160,13 +160,13 @@ void init_raft(ptr<state_machine> sm_instance) {
     stuff.raft_logger_ = log_wrap;
     
     //add username
-    std::cout << "What username would you like to use?" << std::endl;
+    //std::cout << "What username would you like to use?" << std::endl;
 
-    char username[1000];
-    std::cin.getline(username, 1000);
+    //char username[1000];
+    //std::cin.getline(username, 1000);
 
-    std::vector<std::string> tokens = tokenize(username);
-    stuff.server_user_ = tokens[0];
+    //std::vector<std::string> tokens = tokenize(username);
+    stuff.server_user_ = sm_instance->myUserName;
     //std::cin >> stuff.server_user_;
     // State machine.
     stuff.smgr_ = cs_new<inmem_state_mgr>( stuff.server_id_,

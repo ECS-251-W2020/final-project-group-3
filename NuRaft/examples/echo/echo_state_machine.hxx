@@ -32,6 +32,12 @@ public:
         : last_committed_idx_(0)
         {}
 
+    echo_state_machine(int serverID, std::string userName)
+    : last_committed_idx_(0){
+        myServerID = serverID;
+        myUserName = userName;
+    }
+
     ~echo_state_machine() {}
 
     ptr<buffer> pre_commit(const ulong log_idx, buffer& data) {
@@ -40,8 +46,8 @@ public:
         std::string str = bs.get_str();
 
         // Just print.
-        std::cout << "pre_commit " << log_idx << ": "
-                  << str << std::endl;
+        //std::cout << "pre_commit " << log_idx << ": "
+       //           << str << std::endl;
         return nullptr;
     }
 
@@ -50,9 +56,38 @@ public:
         buffer_serializer bs(data);
         std::string str = bs.get_str();
 
+        int semi = 0;
+
+        for (int i = 0; i < str.length(); i++){
+            if (str[i] == ':'){
+                semi = i;
+                break;
+            }
+        }
+       // std::cout << semi << std:: endl;
+
+        bool flag = true;
+
+        for (int i = 0; i < myUserName.length(); i++){
+
+            if (myUserName[i] != str[i]){
+                flag = false;
+            }
+
+        }
+        if (flag == true && myUserName.length() == semi){
+
+        }else {
+            std::string prompt = myUserName + "> ";
+           // str.erase(0,1);
+            std::cout << str << std::endl;
+           // std::cout << prompt;
+        }
+
         // Just print.
-        std::cout << "commit " << log_idx << ": "
-                  << str << std::endl;
+       // std::cout << str << std::endl;
+        //<< "commit " << log_idx << ": "
+                  
 
         // Update last committed index number.
         last_committed_idx_ = log_idx;
@@ -123,8 +158,8 @@ public:
     void create_snapshot(snapshot& s,
                          async_result<bool>::handler_type& when_done)
     {
-        std::cout << "create snapshot " << s.get_last_log_idx()
-                  << " term " << s.get_last_log_term() << std::endl;
+       // std::cout << "create snapshot " << s.get_last_log_idx()
+       //           << " term " << s.get_last_log_term() << std::endl;
         // Clone snapshot from `s`.
         {   std::lock_guard<std::mutex> l(last_snapshot_lock_);
             ptr<buffer> snp_buf = s.serialize();
