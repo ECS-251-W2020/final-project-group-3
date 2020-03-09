@@ -17,10 +17,13 @@
 #include <memory>
 namespace cs {
 
+typedef bool (*callback_function)(const std::vector<std::string>&);
+
 class central_server_impl;
 class central_server {
     public:
         central_server();
+        central_server(callback_function pFunc);
         //central_server(asio::io_context io_context, std::string address);
         void connect(std::string address);
         void join_lobby(int id, int port);
@@ -33,7 +36,6 @@ class central_server {
         ~central_server();
     private:
         std::shared_ptr<central_server_impl> impl_;
-        //central_server_impl* impl_;
 };
 };
 #endif

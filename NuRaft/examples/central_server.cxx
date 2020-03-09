@@ -9,12 +9,14 @@
  ***************************************/ 
 #include "central_server.hxx"
 #include "central_server_common.hxx"
-#include "example_common.hxx"
 #include "asio.hpp"
 
 //using asio::ip::tcp;
 
 namespace cs {
+
+typedef bool (*callback_function)(const std::vector<std::string>&);
+
 /****************************************
  * Central Server Implementation
  * 
@@ -28,13 +30,16 @@ class central_server_impl : public std::enable_shared_from_this<central_server_i
         void receive();
         void handle_connect(const asio::error_code& ec);
         void handle_read(const asio::error_code ec, std::size_t bytes_transferred);
+        void set_function(callback_function pFunc);
         std::shared_ptr<central_server_impl> sp() { return shared_from_this(); }
         ~central_server_impl();
     private:
-        char                    reply_data[max_length];
-        asio::io_context        io_context;
-        asio::ip::tcp::socket   socket;
-        asio::ip::tcp::resolver resolver;
+        char                     reply_data[max_length];
+        asio::io_context         io_context;
+        asio::ip::tcp::socket    socket;
+        asio::ip::tcp::resolver  resolver;
+        std::vector<std::string> tokens;
+        callback_function        do_cmd;
 };
 
 /****************************************
@@ -170,7 +175,12 @@ void central_server_impl::handle_read(const asio::error_code ec, std::size_t byt
                 std::cout << "Message:   " << reply.m_message << std::endl;
                 std::cout << "Port:      " << reply.m_port    << std::endl;
                 std::cout << "Server ID: " << reply.m_id      << std::endl;
-                std::vector<std::string> tokens = tokenize(cmd);
+                std::stringstream ss(reply.m_message);
+                std::string intermediate;
+
+                while(getline(ss, intermediate, ' ')) {
+                    tokens.push_back(intermediate);
+                }
                 do_cmd(tokens);
             }
         } 
@@ -179,6 +189,10 @@ void central_server_impl::handle_read(const asio::error_code ec, std::size_t byt
     } else {
         socket.close();
     }
+}
+
+void central_server_impl::set_function(callback_function pFunc) {
+    do_cmd = pFunc;
 }
 
 /****************************************
@@ -200,6 +214,17 @@ central_server_impl::~central_server_impl() {
  ***************************************/ 
 central_server::central_server() 
    : impl_(std::make_shared<central_server_impl>()) {
+       impl_->connect("35.188.155.151");
+   }
+
+/****************************************
+ * Default constructor 
+ * 
+ * Simply sets up the socket variable
+ ***************************************/ 
+central_server::central_server(callback_function pFunc)
+   : impl_(std::make_shared<central_server_impl>()) {
+       impl_->set_function(pFunc);
        impl_->connect("35.188.155.151");
    }
 
