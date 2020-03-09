@@ -28,7 +28,6 @@ limitations under the License.
 
 #include <stdio.h>
 #include "central_server.hxx"
-//#include "central_server_functions.hxx"
 
 using namespace nuraft;
 

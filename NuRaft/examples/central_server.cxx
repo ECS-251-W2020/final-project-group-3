@@ -11,8 +11,6 @@
 #include "central_server_common.hxx"
 #include "asio.hpp"
 
-//using asio::ip::tcp;
-
 namespace cs {
 
 typedef bool (*callback_function)(const std::vector<std::string>&);
@@ -60,34 +58,11 @@ central_server_impl::central_server_impl()
  * @input address: ip address of CS
  ***************************************/ 
 void central_server_impl::connect(std::string address) {
-    //asio::ip::tcp::resolver resolver(io_context);
     // Hardcoded port for now. Will want to replace eventually.
     asio::async_connect(socket, resolver.resolve(address, "5000"),
        std::bind(&central_server_impl::handle_connect, shared_from_this(), std::placeholders::_1));
 
     std::thread([this](){ io_context.run(); }).detach(); // Have to think about correctly joining later
-    // std::thread([](std::shared_ptr<central_server_impl> cs){
-    //     asio::streambuf receiving;
-    //     request reply;
-
-    //     std::cout << "Listening to socket: " << cs->socket.remote_endpoint().address().to_string() << std::endl;
-
-    //     for(;;) {
-    //         char reply_data[max_length];
-    //         asio::error_code error;
-    //         size_t reply_length = cs->socket.read_some(asio::buffer(reply_data), error);
-    //         if (error == asio::error::eof)
-    //             break;
-    //         else if (error)
-    //             throw asio::system_error(error);
-    //         std::cout << "Message from server!" << std::endl;
-    //         std::ostream(&receiving) << reply_data;
-    //         if (std::istream(&receiving) >> reply) {
-    //             std::cout << "Message: " << reply.m_message << std::endl;
-    //             std::cout << "Length: " << reply_length << std::endl;        
-    //         } 
-    //     }
-    // }, shared_from_this()).detach();
 }
 
 /****************************************
@@ -97,35 +72,13 @@ void central_server_impl::connect(std::string address) {
  ***************************************/ 
 void central_server_impl::send(request message) {
     asio::streambuf sending;
-    asio::streambuf receiving;
-    request reply;
 
     try
     {
         std::ostream(&sending) << message;
         size_t n = socket.send(sending.data());
 
-        // request received;
-
-        // if (std::istream(&sending) >> received) {
-        // std::cout << "Message Type: " << received.m_type << std::endl;
-        // std::cout << "Message:      " << received.m_message << std::endl;
-        // }  else {
-        // std::cout << "Couldn't receive request\n";
-        // }
-
         sending.consume(n);
-
-        /*char reply_data[max_length];
-        asio::error_code error;
-        size_t reply_length = socket.read_some(asio::buffer(reply_data), error);
-        std::cout << "And here!" << std::endl;
-        std::cout << "Reply is: ";
-        std::ostream(&receiving) << reply_data;
-        if (std::istream(&receiving) >> reply) {
-        std::cout << "Message: " << reply.m_message << std::endl;
-        std::cout << "Length: " << reply_length << std::endl;
-        }*/
     }
     catch (std::exception& e)
     {
@@ -143,7 +96,7 @@ void central_server_impl::receive() {
 }
 
 /****************************************
- * Receives a message from the central server
+ * Handler for asynchronous connection
  ***************************************/ 
 void central_server_impl::handle_connect(const asio::error_code& ec) {
     if (!ec) {
@@ -152,29 +105,27 @@ void central_server_impl::handle_connect(const asio::error_code& ec) {
 }
 
 /****************************************
- * Receives a message from the central server
+ * Handler for asynchronous reads
  ***************************************/ 
 void central_server_impl::handle_read(const asio::error_code ec, std::size_t bytes_transferred) {
     if (!ec) {
         request         reply;
         asio::streambuf receiving;
 
-        std::cout << "Listening to socket: " << socket.remote_endpoint().address().to_string() << std::endl;
-
         if (ec == asio::error::eof)
             socket.close();
         else if (ec)
             throw asio::system_error(ec);
-        std::cout << "Message from server!" << std::endl;
+
         std::ostream(&receiving) << reply_data;
         if (std::istream(&receiving) >> reply) {
             if (reply.m_type == REPLY) {
-                std::cout << "Message: " << reply.m_message << std::endl;
-                std::cout << "Length: " << bytes_transferred << std::endl;        
+                // std::cout << "Message: " << reply.m_message << std::endl;
+                // std::cout << "Length: " << bytes_transferred << std::endl;        
             } else if (reply.m_type == ADD_SERVER) {
-                std::cout << "Message:   " << reply.m_message << std::endl;
-                std::cout << "Port:      " << reply.m_port    << std::endl;
-                std::cout << "Server ID: " << reply.m_id      << std::endl;
+                // std::cout << "Message:   " << reply.m_message << std::endl;
+                // std::cout << "Port:      " << reply.m_port    << std::endl;
+                // std::cout << "Server ID: " << reply.m_id      << std::endl;
                 std::stringstream ss(reply.m_message);
                 std::string intermediate;
 
@@ -218,9 +169,11 @@ central_server::central_server()
    }
 
 /****************************************
- * Default constructor 
+ * Constructor that takes in a function
+ * pointer
  * 
- * Simply sets up the socket variable
+ * Necessary for the way they wrote
+ * their code
  ***************************************/ 
 central_server::central_server(callback_function pFunc)
    : impl_(std::make_shared<central_server_impl>()) {

@@ -68,7 +68,7 @@ std::istream &operator>>(std::istream &in, request &r) {
           && in >> length
           && in >> separator && separator == ';'
           ;
-   if (ok) { //WHY DOES THIS DO THIS????
+   if (ok) { 
       r.m_message.resize(length);
       in.read(&r.m_message[0], length);
 
@@ -99,9 +99,7 @@ void session(tcp::socket sock)
   } else {
     std::cout << leaders[0] << " is leader of lobby 0" << std::endl;
   }
-  // connections.push_back(std::shared_ptr<tcp::socket>(std::move(sock)));
-  // std::shared_ptr<tcp::socket> = 
-  //    std::shared_ptr<tcp::socket>(std::move(sock));
+
   try
   {
     for (;;)
@@ -110,11 +108,7 @@ void session(tcp::socket sock)
 
       asio::error_code error;
       size_t length = sockets[address]->read_some(asio::buffer(data), error);
-      //size_t n = sock.receive(buf);
 
-      //auto bytes_transferred = asio::read(sock, asio::buffer(data, max_length));
-      //std::cout << buf.data() << error << std::endl;
-      //std::cout << "Bytes transferred: " << bytes_transferred << std::endl;
       std::cout << "Message length:    " << length << std::endl;
       if (error == asio::error::eof){
         sockets.erase(address);
@@ -148,18 +142,9 @@ void session(tcp::socket sock)
       } else {
          std::cout << "Couldn't receive request\n";
       }
-      //buf.commit(length);
-
-      //std::cout << reply << std::endl;
-      //std::ostream(&buf) << reply;
 
       size_t n = sockets[address]->send(reply.data());
       reply.consume(n);
-      /*std::string test(data);
-      if (test == "hi") { data[0] = 'b'; } else { data[0] = 'l'; }
-      std::cout << test;
-      std::cout << std::endl;*/
-      //asio::write(sock, asio::buffer(data, length));
     }
   }
   catch (std::exception& e)
