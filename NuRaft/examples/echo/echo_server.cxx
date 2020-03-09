@@ -154,9 +154,9 @@ void print_chatHistory(const std::string& cmd,
 //         }
 
     for (auto i = chatList->begin()+serverNum; i != chatList->end(); ++i){
-            if ((*i)->get_buf() != nullptr){
+            //if ((*i)->get_buf() != nullptr){
             std:: cout <<(*i)->get_buf() << std::endl;
-        }
+       // }
     }
 }
 
