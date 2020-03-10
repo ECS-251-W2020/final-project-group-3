@@ -146,8 +146,17 @@ void loop() {
         //std::cin.ignore();
         std::cin.getline(cmd, 1000);
         std::vector<std::string> tokens = tokenize(cmd);
-        if (tokens[0] == "msg") // Add username to prompt
-           tokens.insert(tokens.begin() + 1, stuff.server_user_ + ":"); 
+        //cmd != "leave" && cmd != "q" && cmd != "exit" && cmd != "add" &&
+        //cmd != "st" && cmd != "stat" && cmd != "ls" && cmd != "list" &&
+        //cmd != "h" && cmd != "help" && cmd != "hist"
+        if (tokens[0] != "leave" && tokens[0] != "q" && tokens[0] != "exit" && 
+            tokens[0] != "add" && tokens[0] != "st" && tokens[0] != "stat" &&
+            tokens[0] != "ls" && tokens[0] != "list" && tokens[0] != "h" &&
+            tokens[0] != "help" && tokens[0] != "hist"){ // Add username to prompt
+            
+            tokens.insert(tokens.begin(), stuff.server_user_ + ":"); 
+            tokens.insert(tokens.begin(), "msg");
+        }
         bool cont = do_cmd(tokens);
         if (!cont) break;
     }

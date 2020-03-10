@@ -36,6 +36,7 @@ public:
     : last_committed_idx_(0){
         myServerID = serverID;
         myUserName = userName;
+        lastUser = "";
     }
 
     ~echo_state_machine() {}
