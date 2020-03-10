@@ -42,6 +42,7 @@ public:
         // Just print.
         std::cout << "pre_commit " << log_idx << ": "
                   << str << std::endl;
+        std::cout << "precommitting" << std::chrono::high_resolution_clock::now() << std::endl;
         return nullptr;
     }
 
@@ -53,7 +54,7 @@ public:
         // Just print.
         std::cout << "commit " << log_idx << ": "
                   << str << std::endl;
-
+        std::cout << "committing" << std::chrono::high_resolution_clock::now() << std::endl;
         // Update last committed index number.
         last_committed_idx_ = log_idx;
         return nullptr;

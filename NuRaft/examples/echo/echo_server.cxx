@@ -38,6 +38,7 @@ limitations under the License.
 #include <cassert>
 
 #include "central_server.hxx"
+#include <chrono>
 
 using namespace nuraft;
 
@@ -65,6 +66,7 @@ void handle_result(ptr<TestSuite::Timer> timer,
     std::cout << "succeeded, "
               << TestSuite::usToString( timer->getTimeUs() )
               << std::endl;
+    std::cout << "success" << std::chrono::high_resolution_clock::now() << std::endl;
 }
 
 void append_log(const std::string& cmd,
@@ -221,6 +223,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
 
     }else if ( cmd == "msg" ) {
         // e.g.) msg hello world
+        std::cout << "sending" << std::chrono::high_resolution_clock::now() << std::endl;
         append_log(cmd, tokens);
 
     } else if ( cmd == "add" ) {
