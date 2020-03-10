@@ -62,9 +62,9 @@ void handle_result(ptr<TestSuite::Timer> timer,
                   << std::endl;
         return;
     }
-    std::cout << "succeeded, "
-              << TestSuite::usToString( timer->getTimeUs() )
-              << std::endl;
+    //std::cout << "succeeded, "
+     //         << TestSuite::usToString( timer->getTimeUs() )
+     //         << std::endl;
 }
 
 void append_log(const std::string& cmd,

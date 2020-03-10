@@ -46,8 +46,8 @@ public:
         std::string str = bs.get_str();
 
         // Just print.
-        std::cout << "pre_commit " << log_idx << ": "
-                  << str << std::endl;
+        //std::cout << "pre_commit " << log_idx << ": "
+        //          << str << std::endl;
         return nullptr;
     }
 
@@ -57,8 +57,9 @@ public:
         std::string str = bs.get_str();
 
         // Just print.
-        std::cout << "commit " << log_idx << ": "
-                  << str << std::endl;
+        std::cout << str << std::endl;
+                  
+                //  << "commit " << log_idx << ": "
 
         // Update last committed index number.
         last_committed_idx_ = log_idx;
@@ -96,16 +97,16 @@ public:
                               bool is_first_obj,
                               bool is_last_obj)
     {
-        std::cout << "save snapshot " << s.get_last_log_idx()
-                  << " term " << s.get_last_log_term()
-                  << " object ID " << obj_id << std::endl;
+    //    std::cout << "save snapshot " << s.get_last_log_idx()
+    //              << " term " << s.get_last_log_term()
+    //              << " object ID " << obj_id << std::endl;
         // Request next object.
         obj_id++;
     }
 
     bool apply_snapshot(snapshot& s) {
-        std::cout << "apply snapshot " << s.get_last_log_idx()
-                  << " term " << s.get_last_log_term() << std::endl;
+       // std::cout << "apply snapshot " << s.get_last_log_idx()
+       //           << " term " << s.get_last_log_term() << std::endl;
         // Clone snapshot from `s`.
         {   std::lock_guard<std::mutex> l(last_snapshot_lock_);
             ptr<buffer> snp_buf = s.serialize();
