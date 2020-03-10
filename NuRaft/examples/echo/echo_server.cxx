@@ -221,19 +221,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
 
     }else if ( cmd == "msg" ) {
         // e.g.) msg hello world
-        //std::vector<std::string> tokens2;
-       // std::string user = stuff.server_user_;
-       // user += ":";
-       // tokens2[0] = "msg";
-       // tokens2[1] = user;
-
-        for (int i = 0; i < tokens.size(); i++){
-            //tokens2.push_back(tokens[i]);
-            std::cout << i << " " << tokens[i] << " " << tokens[i].length() << std::endl; 
-
-        }
         append_log(cmd, tokens);
-
     } else if ( cmd == "add" ) {
         // e.g.) add 2 localhost:12345
         add_server(cmd, tokens);

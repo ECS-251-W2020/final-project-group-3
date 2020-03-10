@@ -146,6 +146,8 @@ void loop() {
         //std::cin.ignore();
         std::cin.getline(cmd, 1000);
         std::vector<std::string> tokens = tokenize(cmd);
+        if (tokens[0] == "msg") // Add username to prompt
+           tokens.insert(tokens.begin() + 1, stuff.server_user_ + ":"); 
         bool cont = do_cmd(tokens);
         if (!cont) break;
     }
