@@ -34,6 +34,8 @@ class state_machine {
     __interface_body__(state_machine);
 
 public:
+    int myServerID;
+    std::string myUserName;
     struct ext_op_params {
         ext_op_params(ulong _log_idx,
                       ptr<buffer>& _data)

@@ -221,6 +221,17 @@ bool do_cmd(const std::vector<std::string>& tokens) {
 
     }else if ( cmd == "msg" ) {
         // e.g.) msg hello world
+        //std::vector<std::string> tokens2;
+       // std::string user = stuff.server_user_;
+       // user += ":";
+       // tokens2[0] = "msg";
+       // tokens2[1] = user;
+
+        for (int i = 0; i < tokens.size(); i++){
+            //tokens2.push_back(tokens[i]);
+            std::cout << i << " " << tokens[i] << " " << tokens[i].length() << std::endl; 
+
+        }
         append_log(cmd, tokens);
 
     } else if ( cmd == "add" ) {
@@ -255,7 +266,17 @@ int main(int argc, char** argv) {
     std::cout << "               Version 0.1.0" << std::endl;
     std::cout << "    Server ID:    " << stuff.server_id_ << std::endl;
     std::cout << "    Endpoint:     " << stuff.endpoint_ << std::endl;
-    init_raft( cs_new<echo_state_machine>() );
+    std::cout << "What username would you like to use?" << std::endl;
+    
+    char username[1000];
+    std::cin.getline(username, 1000);
+
+    std::vector<std::string> tokens = tokenize(username);
+    std::string userName = tokens[0];
+    int serverID = std::stoi(argv[1]);
+    init_raft( cs_new<echo_state_machine>(serverID, userName) );
+
+
     if (stuff.addr_ != "localhost") {
         app.join_lobby(stuff.server_id_, stuff.port_);
     }

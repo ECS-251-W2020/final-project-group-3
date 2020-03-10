@@ -32,6 +32,12 @@ public:
         : last_committed_idx_(0)
         {}
 
+    echo_state_machine(int serverID, std::string userName)
+    : last_committed_idx_(0){
+        myServerID = serverID;
+        myUserName = userName;
+    }
+
     ~echo_state_machine() {}
 
     ptr<buffer> pre_commit(const ulong log_idx, buffer& data) {

@@ -160,11 +160,12 @@ void init_raft(ptr<state_machine> sm_instance) {
     stuff.raft_logger_ = log_wrap;
     
     //add username
-    std::cout << "What username would you like to use?" << std::endl;
-    char username[1000];
-    std::cin.getline(username, 1000);
-    std::vector<std::string> tokens = tokenize(username);
-    stuff.server_user_ = tokens[0];
+   // std::cout << "What username would you like to use?" << std::endl;
+   // char username[1000];
+   // std::cin.getline(username, 1000);
+    //std::vector<std::string> tokens = tokenize(username);
+    stuff.server_user_ = sm_instance->myUserName;
+    //tokens[0];
     //std::cin >> stuff.server_user_;
     // State machine.
     stuff.smgr_ = cs_new<inmem_state_mgr>( stuff.server_id_,
@@ -215,13 +216,13 @@ void init_raft(ptr<state_machine> sm_instance) {
 
     // Wait until Raft server is ready (upto 5 seconds).
     const size_t MAX_TRY = 20;
-    std::cout << "init Raft instance ";
+   // std::cout << "init Raft instance ";
     for (size_t ii=0; ii<MAX_TRY; ++ii) {
         if (stuff.raft_instance_->is_initialized()) {
-            std::cout << " done" << std::endl;
+       //     std::cout << " done" << std::endl;
             return;
         }
-        std::cout << "here ";
+      //  std::cout << "here ";
         fflush(stdout);
         TestSuite::sleep_ms(250);
     }
