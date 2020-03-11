@@ -155,11 +155,7 @@ void loop() {
 
 void init_raft(ptr<state_machine> sm_instance) {
     // Logger.
-    auto cur = std::chrono::system_clock::now();
-    auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
-    auto value = now_us.time_since_epoch();
-    long duration = value.count();
-    std::cout << "restarting node start time: " << duration <<std::endl;
+    
 
 
     std::string log_file_name = "./srv" +
@@ -174,6 +170,12 @@ void init_raft(ptr<state_machine> sm_instance) {
     std::cin.getline(username, 1000);
     std::vector<std::string> tokens = tokenize(username);
     stuff.server_user_ = tokens[0];
+    
+    auto cur = std::chrono::system_clock::now();
+    auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
+    auto value = now_us.time_since_epoch();
+    long duration = value.count();
+    std::cout << "restarting node start time: " << duration <<std::endl;
     //std::cin >> stuff.server_user_;
     // State machine.
     stuff.smgr_ = cs_new<inmem_state_mgr>( stuff.server_id_,
