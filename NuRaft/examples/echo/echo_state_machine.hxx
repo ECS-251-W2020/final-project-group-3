@@ -23,6 +23,8 @@ limitations under the License.
 #include <cassert>
 #include <iostream>
 #include <mutex>
+#include <chrono>
+#include <ctime>
 
 using namespace nuraft;
 
@@ -42,7 +44,7 @@ public:
         // Just print.
         std::cout << "pre_commit " << log_idx << ": "
                   << str << std::endl;
-        std::cout << "precommitting" << std::chrono::high_resolution_clock::now() << std::endl;
+       // std::cout << "precommitting" << std::chrono::high_resolution_clock::now().count() << std::endl;
         return nullptr;
     }
 
@@ -54,8 +56,13 @@ public:
         // Just print.
         std::cout << "commit " << log_idx << ": "
                   << str << std::endl;
-        std::cout << "committing" << std::chrono::high_resolution_clock::now() << std::endl;
+        //std::cout << "committing" << std::chrono::high_resolution_clock::now() << std::endl;
         // Update last committed index number.
+                  auto timenow = 
+      std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()); 
+  
+    std::cout << ctime(&timenow) << std::endl; 
+
         last_committed_idx_ = log_idx;
         return nullptr;
     }
