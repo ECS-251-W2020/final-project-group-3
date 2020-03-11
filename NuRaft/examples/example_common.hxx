@@ -18,6 +18,8 @@ limitations under the License.
 #pragma once
 
 using namespace nuraft;
+#include <chrono>
+#include <ctime>
 
 using raft_result = cmd_result< ptr<buffer> >;
 
@@ -153,6 +155,13 @@ void loop() {
 
 void init_raft(ptr<state_machine> sm_instance) {
     // Logger.
+    auto cur = std::chrono::system_clock::now();
+    auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
+    auto value = now_us.time_since_epoch();
+    long duration = value.count();
+    std::cout << "restarting node start time: " << duration <<std::endl;
+
+
     std::string log_file_name = "./srv" +
                                 std::to_string( stuff.server_id_ ) +
                                 ".log";
@@ -219,6 +228,11 @@ void init_raft(ptr<state_machine> sm_instance) {
     for (size_t ii=0; ii<MAX_TRY; ++ii) {
         if (stuff.raft_instance_->is_initialized()) {
             std::cout << " done" << std::endl;
+            auto cur = std::chrono::system_clock::now();
+    auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
+    auto value = now_us.time_since_epoch();
+    long duration = value.count();
+    std::cout << "restarting node finish time: " << duration <<std::endl;
             return;
         }
         std::cout << "here ";

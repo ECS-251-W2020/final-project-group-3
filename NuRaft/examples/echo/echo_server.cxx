@@ -228,7 +228,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
         auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
         auto value = now_us.time_since_epoch();
         long duration = value.count();
-        std::cout << "time: " << duration <<std::endl;
+        std::cout << "send message time: " << duration <<std::endl;
         
         append_log(cmd, tokens);
 
