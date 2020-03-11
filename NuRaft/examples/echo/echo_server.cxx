@@ -63,9 +63,9 @@ void handle_result(ptr<TestSuite::Timer> timer,
                   << std::endl;
         return;
     }
-    std::cout << "succeeded, "
-              << TestSuite::usToString( timer->getTimeUs() )
-              << std::endl;
+    //std::cout << "succeeded, "
+   //           << TestSuite::usToString( timer->getTimeUs() )
+   //           << std::endl;
     //std::cout << "success" << std::chrono::high_resolution_clock::now() << std::endl;
 }
 
@@ -224,6 +224,12 @@ bool do_cmd(const std::vector<std::string>& tokens) {
     }else if ( cmd == "msg" ) {
         // e.g.) msg hello world
        // std::cout << "sending" << std::chrono::high_resolution_clock::now() << std::endl;
+        auto cur = std::chrono::system_clock::now();
+        auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
+        auto value = now_us.time_since_epoch();
+        long duration = value.count();
+        std::cout << "time: " << duration <<std::endl;
+        
         append_log(cmd, tokens);
 
     } else if ( cmd == "add" ) {

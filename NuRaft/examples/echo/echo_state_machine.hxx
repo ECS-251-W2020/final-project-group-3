@@ -18,6 +18,8 @@ limitations under the License.
 #pragma once
 
 #include "nuraft.hxx"
+#include <time.h>
+
 
 #include <atomic>
 #include <cassert>
@@ -52,16 +54,20 @@ public:
         // Extract string from `data.
         buffer_serializer bs(data);
         std::string str = bs.get_str();
+        auto cur = std::chrono::system_clock::now();
+    auto now_us = std::chrono::time_point_cast<std::chrono::microseconds>(cur);
+    auto value = now_us.time_since_epoch();
+    long duration = value.count();
+    std::cout << "commit message time: " << duration <<std::endl;
 
         // Just print.
-        std::cout << "commit " << log_idx << ": "
-                  << str << std::endl;
-        //std::cout << "committing" << std::chrono::high_resolution_clock::now() << std::endl;
-        // Update last committed index number.
-                  auto timenow = 
-      std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()); 
+           // auto cur = std::chrono::system_clock::now();
+         ////   std::chrono::duration<double> elapsed = cur;
+          //  std::cout << (uint64_t)(elapsed.count() * 1000000);
+
+      //std::chrono::system_clock::to_time_t(std::chrono::high_resolution_clock()::now()); 
   
-    std::cout << ctime(&timenow) << std::endl; 
+    //std::cout << ctime(&timenow) << std::endl; 
 
         last_committed_idx_ = log_idx;
         return nullptr;
