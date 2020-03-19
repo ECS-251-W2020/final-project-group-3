@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.16.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft
+CMAKE_SOURCE_DIR = /Users/kyko16/final-project-group-3/NuRaft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft/build
+CMAKE_BINARY_DIR = /Users/kyko16/final-project-group-3/NuRaft/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples/CMakeFiles/progress.marks
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles 0
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles /Users/kyko16/final-project-group-3/NuRaft/build/examples/CMakeFiles/progress.marks
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/CMakeFiles/quick_start.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/quick_start.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/quick_start.dir/rule
 .PHONY : examples/CMakeFiles/quick_start.dir/rule
 
 # Convenience name for target.
@@ -168,12 +168,12 @@ quick_start: examples/CMakeFiles/quick_start.dir/rule
 
 # fast build rule for target.
 quick_start/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/build
 .PHONY : quick_start/fast
 
 # Convenience name for target.
 examples/CMakeFiles/echo_server.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/echo_server.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/echo_server.dir/rule
 .PHONY : examples/CMakeFiles/echo_server.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ echo_server: examples/CMakeFiles/echo_server.dir/rule
 
 # fast build rule for target.
 echo_server/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/build
 .PHONY : echo_server/fast
 
 # Convenience name for target.
 examples/CMakeFiles/calc_server.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/calc_server.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/calc_server.dir/rule
 .PHONY : examples/CMakeFiles/calc_server.dir/rule
 
 # Convenience name for target.
@@ -198,7 +198,7 @@ calc_server: examples/CMakeFiles/calc_server.dir/rule
 
 # fast build rule for target.
 calc_server/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/build
 .PHONY : calc_server/fast
 
 calculator/calc_server.o: calculator/calc_server.cxx.o
@@ -207,7 +207,7 @@ calculator/calc_server.o: calculator/calc_server.cxx.o
 
 # target to build an object file
 calculator/calc_server.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o
 .PHONY : calculator/calc_server.cxx.o
 
 calculator/calc_server.i: calculator/calc_server.cxx.i
@@ -216,7 +216,7 @@ calculator/calc_server.i: calculator/calc_server.cxx.i
 
 # target to preprocess a source file
 calculator/calc_server.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.i
 .PHONY : calculator/calc_server.cxx.i
 
 calculator/calc_server.s: calculator/calc_server.cxx.s
@@ -225,7 +225,7 @@ calculator/calc_server.s: calculator/calc_server.cxx.s
 
 # target to generate assembly for a file
 calculator/calc_server.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.s
 .PHONY : calculator/calc_server.cxx.s
 
 echo/echo_server.o: echo/echo_server.cxx.o
@@ -234,7 +234,7 @@ echo/echo_server.o: echo/echo_server.cxx.o
 
 # target to build an object file
 echo/echo_server.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.o
 .PHONY : echo/echo_server.cxx.o
 
 echo/echo_server.i: echo/echo_server.cxx.i
@@ -243,7 +243,7 @@ echo/echo_server.i: echo/echo_server.cxx.i
 
 # target to preprocess a source file
 echo/echo_server.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.i
 .PHONY : echo/echo_server.cxx.i
 
 echo/echo_server.s: echo/echo_server.cxx.s
@@ -252,7 +252,7 @@ echo/echo_server.s: echo/echo_server.cxx.s
 
 # target to generate assembly for a file
 echo/echo_server.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/echo/echo_server.cxx.s
 .PHONY : echo/echo_server.cxx.s
 
 in_memory_log_store.o: in_memory_log_store.cxx.o
@@ -261,9 +261,9 @@ in_memory_log_store.o: in_memory_log_store.cxx.o
 
 # target to build an object file
 in_memory_log_store.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/in_memory_log_store.cxx.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o
 .PHONY : in_memory_log_store.cxx.o
 
 in_memory_log_store.i: in_memory_log_store.cxx.i
@@ -272,9 +272,9 @@ in_memory_log_store.i: in_memory_log_store.cxx.i
 
 # target to preprocess a source file
 in_memory_log_store.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/in_memory_log_store.cxx.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.i
 .PHONY : in_memory_log_store.cxx.i
 
 in_memory_log_store.s: in_memory_log_store.cxx.s
@@ -283,9 +283,9 @@ in_memory_log_store.s: in_memory_log_store.cxx.s
 
 # target to generate assembly for a file
 in_memory_log_store.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/in_memory_log_store.cxx.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.s
 .PHONY : in_memory_log_store.cxx.s
 
 logger.o: logger.cc.o
@@ -294,9 +294,9 @@ logger.o: logger.cc.o
 
 # target to build an object file
 logger.cc.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/logger.cc.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/logger.cc.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/logger.cc.o
 .PHONY : logger.cc.o
 
 logger.i: logger.cc.i
@@ -305,9 +305,9 @@ logger.i: logger.cc.i
 
 # target to preprocess a source file
 logger.cc.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/logger.cc.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/logger.cc.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/logger.cc.i
 .PHONY : logger.cc.i
 
 logger.s: logger.cc.s
@@ -316,9 +316,9 @@ logger.s: logger.cc.s
 
 # target to generate assembly for a file
 logger.cc.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/logger.cc.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/logger.cc.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/echo_server.dir/build.make examples/CMakeFiles/echo_server.dir/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/calc_server.dir/build.make examples/CMakeFiles/calc_server.dir/logger.cc.s
 .PHONY : logger.cc.s
 
 quick_start.o: quick_start.cxx.o
@@ -327,7 +327,7 @@ quick_start.o: quick_start.cxx.o
 
 # target to build an object file
 quick_start.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/quick_start.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/quick_start.cxx.o
 .PHONY : quick_start.cxx.o
 
 quick_start.i: quick_start.cxx.i
@@ -336,7 +336,7 @@ quick_start.i: quick_start.cxx.i
 
 # target to preprocess a source file
 quick_start.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/quick_start.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/quick_start.cxx.i
 .PHONY : quick_start.cxx.i
 
 quick_start.s: quick_start.cxx.s
@@ -345,7 +345,7 @@ quick_start.s: quick_start.cxx.s
 
 # target to generate assembly for a file
 quick_start.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/quick_start.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f examples/CMakeFiles/quick_start.dir/build.make examples/CMakeFiles/quick_start.dir/quick_start.cxx.s
 .PHONY : quick_start.cxx.s
 
 # Help Target
@@ -389,6 +389,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

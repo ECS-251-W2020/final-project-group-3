@@ -42,8 +42,8 @@ public:
         , value_type_(value_type)
         , buff_(buff)
         {}
-
-    __nocopy__(log_entry);
+    
+   // __nocopy__(log_entry);
 
 public:
     ulong get_term() const {

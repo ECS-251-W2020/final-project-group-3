@@ -365,4 +365,3 @@ const char* buffer_serializer::get_cstr() {
 }
 
 }
-

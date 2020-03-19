@@ -24,7 +24,7 @@ limitations under the License.
 namespace nuraft {
 
 class logger {
-    __interface_body__(logger);
+    //__interface_body__(logger);
 
 public:
     /**

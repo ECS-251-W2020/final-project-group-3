@@ -45,4 +45,4 @@ tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.o
  ../src/histogram.h
  ../src/stat_mgr.hxx
  ../tests/test_common.h
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/stat_mgr_test.cxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/stat_mgr_test.cxx

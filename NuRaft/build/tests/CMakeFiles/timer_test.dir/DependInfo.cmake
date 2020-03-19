@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/timer_test.cxx" "/Users/zixin/Documents/final-project-group-3/NuRaft/build/tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.o"
+  "/Users/kyko16/final-project-group-3/NuRaft/tests/unit/timer_test.cxx" "/Users/kyko16/final-project-group-3/NuRaft/build/tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

@@ -138,11 +138,11 @@ void loop() {
     //std::string prompt = "user " + std::to_string(stuff.server_id_) + "> ";
     std::string prompt = stuff.server_user_ + "> "; //uses username instead
     while (true) {
-#if defined(__linux__) || defined(__APPLE__)
-        std::cout << _CLM_GREEN << prompt << _CLM_END;
-#else
+//#if defined(__linux__) || defined(__APPLE__)
+//        std::cout << _CLM_GREEN << prompt << _CLM_END;
+//#else
         std::cout << prompt;
-#endif
+//#endif
         std::cin.getline(cmd, 1000);
 
         std::vector<std::string> tokens = tokenize(cmd);
@@ -220,7 +220,7 @@ void init_raft(ptr<state_machine> sm_instance) {
         }
         std::cout << "here ";
         fflush(stdout);
-        TestSuite::sleep_ms(250);
+        //TestSuite::sleep_ms(250);
     }
     std::cout << " FAILED" << std::endl;
     log_wrap.reset();

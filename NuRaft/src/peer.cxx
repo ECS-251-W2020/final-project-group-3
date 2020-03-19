@@ -182,4 +182,3 @@ void peer::shutdown() {
 }
 
 } // namespace nuraft;
-

@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.16.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft
+CMAKE_SOURCE_DIR = /Users/kyko16/final-project-group-3/NuRaft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft/build
+CMAKE_BINARY_DIR = /Users/kyko16/final-project-group-3/NuRaft/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests/CMakeFiles/progress.marks
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles 0
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles /Users/kyko16/final-project-group-3/NuRaft/build/tests/CMakeFiles/progress.marks
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/buffer_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/buffer_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/buffer_test.dir/rule
 .PHONY : tests/CMakeFiles/buffer_test.dir/rule
 
 # Convenience name for target.
@@ -168,12 +168,12 @@ buffer_test: tests/CMakeFiles/buffer_test.dir/rule
 
 # fast build rule for target.
 buffer_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/build
 .PHONY : buffer_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/stat_mgr_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/stat_mgr_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/stat_mgr_test.dir/rule
 .PHONY : tests/CMakeFiles/stat_mgr_test.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ stat_mgr_test: tests/CMakeFiles/stat_mgr_test.dir/rule
 
 # fast build rule for target.
 stat_mgr_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/build
 .PHONY : stat_mgr_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/timer_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/timer_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/timer_test.dir/rule
 .PHONY : tests/CMakeFiles/timer_test.dir/rule
 
 # Convenience name for target.
@@ -198,12 +198,12 @@ timer_test: tests/CMakeFiles/timer_test.dir/rule
 
 # fast build rule for target.
 timer_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/build
 .PHONY : timer_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/raft_server_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/raft_server_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/raft_server_test.dir/rule
 .PHONY : tests/CMakeFiles/raft_server_test.dir/rule
 
 # Convenience name for target.
@@ -213,12 +213,12 @@ raft_server_test: tests/CMakeFiles/raft_server_test.dir/rule
 
 # fast build rule for target.
 raft_server_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/build
 .PHONY : raft_server_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/strfmt_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/strfmt_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/strfmt_test.dir/rule
 .PHONY : tests/CMakeFiles/strfmt_test.dir/rule
 
 # Convenience name for target.
@@ -228,12 +228,12 @@ strfmt_test: tests/CMakeFiles/strfmt_test.dir/rule
 
 # fast build rule for target.
 strfmt_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/build
 .PHONY : strfmt_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/serialization_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/serialization_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/serialization_test.dir/rule
 .PHONY : tests/CMakeFiles/serialization_test.dir/rule
 
 # Convenience name for target.
@@ -243,12 +243,12 @@ serialization_test: tests/CMakeFiles/serialization_test.dir/rule
 
 # fast build rule for target.
 serialization_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/build
 .PHONY : serialization_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/asio_service_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/asio_service_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/asio_service_test.dir/rule
 .PHONY : tests/CMakeFiles/asio_service_test.dir/rule
 
 # Convenience name for target.
@@ -258,12 +258,12 @@ asio_service_test: tests/CMakeFiles/asio_service_test.dir/rule
 
 # fast build rule for target.
 asio_service_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/build
 .PHONY : asio_service_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/raft_bench.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/raft_bench.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/raft_bench.dir/rule
 .PHONY : tests/CMakeFiles/raft_bench.dir/rule
 
 # Convenience name for target.
@@ -273,12 +273,12 @@ raft_bench: tests/CMakeFiles/raft_bench.dir/rule
 
 # fast build rule for target.
 raft_bench/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/build
 .PHONY : raft_bench/fast
 
 # Convenience name for target.
 tests/CMakeFiles/failure_test.dir/rule:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/failure_test.dir/rule
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/failure_test.dir/rule
 .PHONY : tests/CMakeFiles/failure_test.dir/rule
 
 # Convenience name for target.
@@ -288,7 +288,7 @@ failure_test: tests/CMakeFiles/failure_test.dir/rule
 
 # fast build rule for target.
 failure_test/fast:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/build
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/build
 .PHONY : failure_test/fast
 
 __/examples/in_memory_log_store.o: __/examples/in_memory_log_store.cxx.o
@@ -297,10 +297,10 @@ __/examples/in_memory_log_store.o: __/examples/in_memory_log_store.cxx.o
 
 # target to build an object file
 __/examples/in_memory_log_store.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/in_memory_log_store.cxx.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/in_memory_log_store.cxx.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/in_memory_log_store.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/in_memory_log_store.cxx.o
 .PHONY : __/examples/in_memory_log_store.cxx.o
 
 __/examples/in_memory_log_store.i: __/examples/in_memory_log_store.cxx.i
@@ -309,10 +309,10 @@ __/examples/in_memory_log_store.i: __/examples/in_memory_log_store.cxx.i
 
 # target to preprocess a source file
 __/examples/in_memory_log_store.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/in_memory_log_store.cxx.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/in_memory_log_store.cxx.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/in_memory_log_store.cxx.i
 .PHONY : __/examples/in_memory_log_store.cxx.i
 
 __/examples/in_memory_log_store.s: __/examples/in_memory_log_store.cxx.s
@@ -321,10 +321,10 @@ __/examples/in_memory_log_store.s: __/examples/in_memory_log_store.cxx.s
 
 # target to generate assembly for a file
 __/examples/in_memory_log_store.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/in_memory_log_store.cxx.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/in_memory_log_store.cxx.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/in_memory_log_store.cxx.s
 .PHONY : __/examples/in_memory_log_store.cxx.s
 
 __/examples/logger.o: __/examples/logger.cc.o
@@ -333,10 +333,10 @@ __/examples/logger.o: __/examples/logger.cc.o
 
 # target to build an object file
 __/examples/logger.cc.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/logger.cc.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/logger.cc.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/logger.cc.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/logger.cc.o
 .PHONY : __/examples/logger.cc.o
 
 __/examples/logger.i: __/examples/logger.cc.i
@@ -345,10 +345,10 @@ __/examples/logger.i: __/examples/logger.cc.i
 
 # target to preprocess a source file
 __/examples/logger.cc.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/logger.cc.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/logger.cc.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/logger.cc.i
 .PHONY : __/examples/logger.cc.i
 
 __/examples/logger.s: __/examples/logger.cc.s
@@ -357,10 +357,10 @@ __/examples/logger.s: __/examples/logger.cc.s
 
 # target to generate assembly for a file
 __/examples/logger.cc.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/logger.cc.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/logger.cc.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/__/examples/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/__/examples/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/__/examples/logger.cc.s
 .PHONY : __/examples/logger.cc.s
 
 bench/raft_bench.o: bench/raft_bench.cxx.o
@@ -369,7 +369,7 @@ bench/raft_bench.o: bench/raft_bench.cxx.o
 
 # target to build an object file
 bench/raft_bench.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/bench/raft_bench.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/bench/raft_bench.cxx.o
 .PHONY : bench/raft_bench.cxx.o
 
 bench/raft_bench.i: bench/raft_bench.cxx.i
@@ -378,7 +378,7 @@ bench/raft_bench.i: bench/raft_bench.cxx.i
 
 # target to preprocess a source file
 bench/raft_bench.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/bench/raft_bench.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/bench/raft_bench.cxx.i
 .PHONY : bench/raft_bench.cxx.i
 
 bench/raft_bench.s: bench/raft_bench.cxx.s
@@ -387,7 +387,7 @@ bench/raft_bench.s: bench/raft_bench.cxx.s
 
 # target to generate assembly for a file
 bench/raft_bench.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/bench/raft_bench.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_bench.dir/build.make tests/CMakeFiles/raft_bench.dir/bench/raft_bench.cxx.s
 .PHONY : bench/raft_bench.cxx.s
 
 unit/asio_service_test.o: unit/asio_service_test.cxx.o
@@ -396,7 +396,7 @@ unit/asio_service_test.o: unit/asio_service_test.cxx.o
 
 # target to build an object file
 unit/asio_service_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/unit/asio_service_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/unit/asio_service_test.cxx.o
 .PHONY : unit/asio_service_test.cxx.o
 
 unit/asio_service_test.i: unit/asio_service_test.cxx.i
@@ -405,7 +405,7 @@ unit/asio_service_test.i: unit/asio_service_test.cxx.i
 
 # target to preprocess a source file
 unit/asio_service_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/unit/asio_service_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/unit/asio_service_test.cxx.i
 .PHONY : unit/asio_service_test.cxx.i
 
 unit/asio_service_test.s: unit/asio_service_test.cxx.s
@@ -414,7 +414,7 @@ unit/asio_service_test.s: unit/asio_service_test.cxx.s
 
 # target to generate assembly for a file
 unit/asio_service_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/unit/asio_service_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/asio_service_test.dir/build.make tests/CMakeFiles/asio_service_test.dir/unit/asio_service_test.cxx.s
 .PHONY : unit/asio_service_test.cxx.s
 
 unit/buffer_test.o: unit/buffer_test.cxx.o
@@ -423,7 +423,7 @@ unit/buffer_test.o: unit/buffer_test.cxx.o
 
 # target to build an object file
 unit/buffer_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/unit/buffer_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/unit/buffer_test.cxx.o
 .PHONY : unit/buffer_test.cxx.o
 
 unit/buffer_test.i: unit/buffer_test.cxx.i
@@ -432,7 +432,7 @@ unit/buffer_test.i: unit/buffer_test.cxx.i
 
 # target to preprocess a source file
 unit/buffer_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/unit/buffer_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/unit/buffer_test.cxx.i
 .PHONY : unit/buffer_test.cxx.i
 
 unit/buffer_test.s: unit/buffer_test.cxx.s
@@ -441,7 +441,7 @@ unit/buffer_test.s: unit/buffer_test.cxx.s
 
 # target to generate assembly for a file
 unit/buffer_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/unit/buffer_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/buffer_test.dir/build.make tests/CMakeFiles/buffer_test.dir/unit/buffer_test.cxx.s
 .PHONY : unit/buffer_test.cxx.s
 
 unit/failure_test.o: unit/failure_test.cxx.o
@@ -450,7 +450,7 @@ unit/failure_test.o: unit/failure_test.cxx.o
 
 # target to build an object file
 unit/failure_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/failure_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/failure_test.cxx.o
 .PHONY : unit/failure_test.cxx.o
 
 unit/failure_test.i: unit/failure_test.cxx.i
@@ -459,7 +459,7 @@ unit/failure_test.i: unit/failure_test.cxx.i
 
 # target to preprocess a source file
 unit/failure_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/failure_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/failure_test.cxx.i
 .PHONY : unit/failure_test.cxx.i
 
 unit/failure_test.s: unit/failure_test.cxx.s
@@ -468,7 +468,7 @@ unit/failure_test.s: unit/failure_test.cxx.s
 
 # target to generate assembly for a file
 unit/failure_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/failure_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/failure_test.cxx.s
 .PHONY : unit/failure_test.cxx.s
 
 unit/fake_network.o: unit/fake_network.cxx.o
@@ -477,8 +477,8 @@ unit/fake_network.o: unit/fake_network.cxx.o
 
 # target to build an object file
 unit/fake_network.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.o
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/fake_network.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/fake_network.cxx.o
 .PHONY : unit/fake_network.cxx.o
 
 unit/fake_network.i: unit/fake_network.cxx.i
@@ -487,8 +487,8 @@ unit/fake_network.i: unit/fake_network.cxx.i
 
 # target to preprocess a source file
 unit/fake_network.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.i
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/fake_network.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/fake_network.cxx.i
 .PHONY : unit/fake_network.cxx.i
 
 unit/fake_network.s: unit/fake_network.cxx.s
@@ -497,8 +497,8 @@ unit/fake_network.s: unit/fake_network.cxx.s
 
 # target to generate assembly for a file
 unit/fake_network.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.s
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/fake_network.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/failure_test.dir/build.make tests/CMakeFiles/failure_test.dir/unit/fake_network.cxx.s
 .PHONY : unit/fake_network.cxx.s
 
 unit/raft_server_test.o: unit/raft_server_test.cxx.o
@@ -507,7 +507,7 @@ unit/raft_server_test.o: unit/raft_server_test.cxx.o
 
 # target to build an object file
 unit/raft_server_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.o
 .PHONY : unit/raft_server_test.cxx.o
 
 unit/raft_server_test.i: unit/raft_server_test.cxx.i
@@ -516,7 +516,7 @@ unit/raft_server_test.i: unit/raft_server_test.cxx.i
 
 # target to preprocess a source file
 unit/raft_server_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.i
 .PHONY : unit/raft_server_test.cxx.i
 
 unit/raft_server_test.s: unit/raft_server_test.cxx.s
@@ -525,7 +525,7 @@ unit/raft_server_test.s: unit/raft_server_test.cxx.s
 
 # target to generate assembly for a file
 unit/raft_server_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/raft_server_test.dir/build.make tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.s
 .PHONY : unit/raft_server_test.cxx.s
 
 unit/serialization_test.o: unit/serialization_test.cxx.o
@@ -534,7 +534,7 @@ unit/serialization_test.o: unit/serialization_test.cxx.o
 
 # target to build an object file
 unit/serialization_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o
 .PHONY : unit/serialization_test.cxx.o
 
 unit/serialization_test.i: unit/serialization_test.cxx.i
@@ -543,7 +543,7 @@ unit/serialization_test.i: unit/serialization_test.cxx.i
 
 # target to preprocess a source file
 unit/serialization_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.i
 .PHONY : unit/serialization_test.cxx.i
 
 unit/serialization_test.s: unit/serialization_test.cxx.s
@@ -552,7 +552,7 @@ unit/serialization_test.s: unit/serialization_test.cxx.s
 
 # target to generate assembly for a file
 unit/serialization_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/serialization_test.dir/build.make tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.s
 .PHONY : unit/serialization_test.cxx.s
 
 unit/stat_mgr_test.o: unit/stat_mgr_test.cxx.o
@@ -561,7 +561,7 @@ unit/stat_mgr_test.o: unit/stat_mgr_test.cxx.o
 
 # target to build an object file
 unit/stat_mgr_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.o
 .PHONY : unit/stat_mgr_test.cxx.o
 
 unit/stat_mgr_test.i: unit/stat_mgr_test.cxx.i
@@ -570,7 +570,7 @@ unit/stat_mgr_test.i: unit/stat_mgr_test.cxx.i
 
 # target to preprocess a source file
 unit/stat_mgr_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.i
 .PHONY : unit/stat_mgr_test.cxx.i
 
 unit/stat_mgr_test.s: unit/stat_mgr_test.cxx.s
@@ -579,7 +579,7 @@ unit/stat_mgr_test.s: unit/stat_mgr_test.cxx.s
 
 # target to generate assembly for a file
 unit/stat_mgr_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/stat_mgr_test.dir/build.make tests/CMakeFiles/stat_mgr_test.dir/unit/stat_mgr_test.cxx.s
 .PHONY : unit/stat_mgr_test.cxx.s
 
 unit/strfmt_test.o: unit/strfmt_test.cxx.o
@@ -588,7 +588,7 @@ unit/strfmt_test.o: unit/strfmt_test.cxx.o
 
 # target to build an object file
 unit/strfmt_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/unit/strfmt_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/unit/strfmt_test.cxx.o
 .PHONY : unit/strfmt_test.cxx.o
 
 unit/strfmt_test.i: unit/strfmt_test.cxx.i
@@ -597,7 +597,7 @@ unit/strfmt_test.i: unit/strfmt_test.cxx.i
 
 # target to preprocess a source file
 unit/strfmt_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/unit/strfmt_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/unit/strfmt_test.cxx.i
 .PHONY : unit/strfmt_test.cxx.i
 
 unit/strfmt_test.s: unit/strfmt_test.cxx.s
@@ -606,7 +606,7 @@ unit/strfmt_test.s: unit/strfmt_test.cxx.s
 
 # target to generate assembly for a file
 unit/strfmt_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/unit/strfmt_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/strfmt_test.dir/build.make tests/CMakeFiles/strfmt_test.dir/unit/strfmt_test.cxx.s
 .PHONY : unit/strfmt_test.cxx.s
 
 unit/timer_test.o: unit/timer_test.cxx.o
@@ -615,7 +615,7 @@ unit/timer_test.o: unit/timer_test.cxx.o
 
 # target to build an object file
 unit/timer_test.cxx.o:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.o
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.o
 .PHONY : unit/timer_test.cxx.o
 
 unit/timer_test.i: unit/timer_test.cxx.i
@@ -624,7 +624,7 @@ unit/timer_test.i: unit/timer_test.cxx.i
 
 # target to preprocess a source file
 unit/timer_test.cxx.i:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.i
 .PHONY : unit/timer_test.cxx.i
 
 unit/timer_test.s: unit/timer_test.cxx.s
@@ -633,7 +633,7 @@ unit/timer_test.s: unit/timer_test.cxx.s
 
 # target to generate assembly for a file
 unit/timer_test.cxx.s:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(MAKE) -f tests/CMakeFiles/timer_test.dir/build.make tests/CMakeFiles/timer_test.dir/unit/timer_test.cxx.s
 .PHONY : unit/timer_test.cxx.s
 
 # Help Target
@@ -704,6 +704,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

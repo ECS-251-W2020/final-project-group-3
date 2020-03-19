@@ -235,4 +235,3 @@ void raft_server::handle_custom_notification_resp(resp_msg& resp) {
 }
 
 } // namespace nuraft;
-

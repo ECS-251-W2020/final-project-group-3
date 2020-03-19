@@ -80,4 +80,3 @@ bool raft_launcher::shutdown(size_t time_limit_sec) {
 }
 
 // LCOV_EXCL_STOP
-

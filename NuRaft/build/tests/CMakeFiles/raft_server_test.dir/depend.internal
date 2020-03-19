@@ -42,12 +42,12 @@ tests/CMakeFiles/raft_server_test.dir/__/examples/in_memory_log_store.cxx.o
  ../include/libnuraft/state_machine.hxx
  ../include/libnuraft/state_mgr.hxx
  ../include/libnuraft/timer_task.hxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.hxx
+ /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
+ /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.hxx
 tests/CMakeFiles/raft_server_test.dir/__/examples/logger.cc.o
- /Users/zixin/Documents/final-project-group-3/NuRaft/examples/backtrace.h
- /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc
- /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.h
+ /Users/kyko16/final-project-group-3/NuRaft/examples/backtrace.h
+ /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc
+ /Users/kyko16/final-project-group-3/NuRaft/examples/logger.h
 tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.o
  ../examples/logger.h
  ../include/libnuraft/asio_service.hxx
@@ -91,8 +91,8 @@ tests/CMakeFiles/raft_server_test.dir/unit/fake_network.cxx.o
  ../include/libnuraft/state_mgr.hxx
  ../include/libnuraft/strfmt.hxx
  ../include/libnuraft/timer_task.hxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/fake_network.cxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/fake_network.hxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/fake_network.cxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/fake_network.hxx
 tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.o
  ../examples/in_memory_log_store.hxx
  ../examples/logger.h
@@ -139,7 +139,7 @@ tests/CMakeFiles/raft_server_test.dir/unit/raft_server_test.cxx.o
  ../include/libnuraft/timer_task.hxx
  ../src/event_awaiter.h
  ../tests/test_common.h
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/fake_network.hxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_functional_common.hxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_package_fake.hxx
- /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_server_test.cxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/fake_network.hxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_functional_common.hxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_package_fake.hxx
+ /Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_server_test.cxx

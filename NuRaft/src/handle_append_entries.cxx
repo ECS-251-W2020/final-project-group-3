@@ -858,4 +858,3 @@ ulong raft_server::get_expected_committed_log_idx() {
 }
 
 } // namespace nuraft;
-

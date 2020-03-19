@@ -476,7 +476,7 @@ direct.h
 Windows.h
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/backtrace.h
+/Users/kyko16/final-project-group-3/NuRaft/examples/backtrace.h
 cstddef
 -
 sstream
@@ -498,17 +498,17 @@ mach-o/getsect.h
 mach-o/dyld.h
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
+/Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
 in_memory_log_store.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.hxx
+/Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.hxx
 nuraft.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/nuraft.hxx
+/Users/kyko16/final-project-group-3/NuRaft/examples/nuraft.hxx
 cassert
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.hxx
+/Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.hxx
 log_store.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/log_store.hxx
+/Users/kyko16/final-project-group-3/NuRaft/examples/log_store.hxx
 atomic
 -
 map
@@ -516,11 +516,11 @@ map
 mutex
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc
+/Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc
 logger.h
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.h
+/Users/kyko16/final-project-group-3/NuRaft/examples/logger.h
 backtrace.h
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/backtrace.h
+/Users/kyko16/final-project-group-3/NuRaft/examples/backtrace.h
 algorithm
 -
 iomanip
@@ -546,7 +546,7 @@ stdlib.h
 string.h
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.h
+/Users/kyko16/final-project-group-3/NuRaft/examples/logger.h
 atomic
 -
 chrono
@@ -576,27 +576,27 @@ stdarg.h
 sys/time.h
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/asio_service_test.cxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/asio_service_test.cxx
 raft_package_asio.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_package_asio.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_package_asio.hxx
 event_awaiter.h
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/event_awaiter.h
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/event_awaiter.h
 test_common.h
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/test_common.h
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/test_common.h
 unordered_map
 -
 stdio.h
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_functional_common.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_functional_common.hxx
 attr_unused.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/attr_unused.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/attr_unused.hxx
 in_memory_log_store.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/in_memory_log_store.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/in_memory_log_store.hxx
 logger_wrapper.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/logger_wrapper.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/logger_wrapper.hxx
 test_common.h
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/test_common.h
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/test_common.h
 cassert
 -
 list
@@ -606,13 +606,13 @@ map
 sstream
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_package_asio.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_package_asio.hxx
 raft_functional_common.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/raft_functional_common.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/raft_functional_common.hxx
 internal_timer.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/internal_timer.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/internal_timer.hxx
 nuraft.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/nuraft.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/nuraft.hxx
 unistd.h
 -
 

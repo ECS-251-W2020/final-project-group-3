@@ -416,4 +416,3 @@ void raft_server::handle_prevote_resp(resp_msg& resp) {
 }
 
 } // namespace nuraft;
-

@@ -95,7 +95,7 @@ public:
      * @param end The end log index number (exclusive).
      * @return The log entries between [start, end).
      */
-    virtual ptr<std::vector<ptr<log_entry>>> log_entries(ulong start, ulong end) = 0;
+    virtual ptr<std::vector<ptr<log_entry> > > log_entries(ulong start, ulong end) = 0;
 
     /**
      * (Optional)
@@ -114,8 +114,8 @@ public:
      * @return The log entries between [start, end) and limited by the total size
      *         given by the batch_size_hint_in_bytes.
      */
-    virtual ptr<std::vector<ptr<log_entry>>> log_entries_ext(
-            ulong start, ulong end, ulong batch_size_hint_in_bytes = 0) {
+    virtual ptr< std::vector< ptr<log_entry> > > log_entries_ext(ulong start, ulong end, ulong batch_size_hint_in_bytes = 0)
+    {
         return log_entries(start, end);
     }
 

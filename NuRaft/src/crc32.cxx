@@ -384,4 +384,3 @@ uint32_t crc32_8_last8(const void* data, size_t len, uint32_t prev_value) {
 }
 
 // LCOV_EXCL_STOP
-

@@ -52,13 +52,13 @@ public:
         ptr<buffer> buf = config.serialize();
         saved_config_ = cluster_config::deserialize(*buf);
     }
-
+/*
     void save_state(const srv_state& state) {
         // Just keep in memory in this example.
         // Need to write to disk here, if want to make it durable.
         ptr<buffer> buf = state.serialize();
         saved_state_ = srv_state::deserialize(*buf);
-    }
+    }*/
 
     ptr<srv_state> read_state() {
         // Just return in-memory data in this example.

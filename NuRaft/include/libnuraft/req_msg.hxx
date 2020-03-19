@@ -61,7 +61,7 @@ public:
         return commit_idx_;
     }
 
-    std::vector<ptr<log_entry>>& log_entries() {
+    std::vector<ptr<log_entry> >& log_entries() {
         return log_entries_;
     }
 
@@ -80,7 +80,7 @@ private:
     ulong commit_idx_;
 
     // Logs. Can be empty.
-    std::vector<ptr<log_entry>> log_entries_;
+    std::vector< ptr<log_entry> > log_entries_;
 };
 
 }

@@ -456,7 +456,7 @@ public:
      void leave(int serverID);
 
 protected:
-    typedef std::unordered_map<int32, ptr<peer>>::const_iterator peer_itor;
+    typedef std::unordered_map<int32, ptr<peer> >::const_iterator peer_itor;
 
     struct commit_ret_elem;
 
@@ -742,11 +742,11 @@ protected:
 
     // Map of {Server ID, `peer` instance},
     // protected by `lock_`.
-    std::unordered_map<int32, ptr<peer>> peers_;
-
+    std::unordered_map< int32, ptr<peer> > peers_;
+    
     // Map of {server ID, connection to corresponding server},
     // protected by `lock_`.
-    std::unordered_map<int32, ptr<rpc_client>> rpc_clients_;
+    std::unordered_map< int32, ptr<rpc_client> > rpc_clients_;
 
     // Current role of this server.
     std::atomic<srv_role> role_;
@@ -826,7 +826,7 @@ protected:
 
     // Client requests waiting for replication.
     // Only used in blocking mode.
-    std::map<ulong, ptr<commit_ret_elem>> commit_ret_elems_;
+    std::map< ulong, ptr<commit_ret_elem> > commit_ret_elems_;
 
     // Lock for `commit_ret_elems_`.
     std::mutex commit_ret_elems_lock_;
@@ -840,11 +840,11 @@ protected:
 
     // (Read-only)
     // Response handler.
-    rpc_handler resp_handler_;
+    //rpc_handler resp_handler_;
 
     // (Read-only)
     // Extended response handler.
-    rpc_handler ex_resp_handler_;
+    //rpc_handler ex_resp_handler_;
 
     // Last snapshot instance.
     ptr<snapshot> last_snapshot_;

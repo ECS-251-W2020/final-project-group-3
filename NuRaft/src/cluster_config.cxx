@@ -76,4 +76,3 @@ ptr<cluster_config> cluster_config::deserialize(buffer_serializer& bs) {
 }
 
 } // namespace nuraft;
-

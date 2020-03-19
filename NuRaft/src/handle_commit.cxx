@@ -689,4 +689,3 @@ void raft_server::remove_peer_from_peers(const ptr<peer>& pp) {
 }
 
 } // namespace nuraft;
-

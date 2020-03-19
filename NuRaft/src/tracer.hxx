@@ -90,4 +90,3 @@ static inline std::string msg_if_given
 #define p_ft(...) \
     if (l_ && l_->get_level() >= 1) \
         l_->put_details(1, __FILE__, __func__, __LINE__, msg_if_given(__VA_ARGS__))
-

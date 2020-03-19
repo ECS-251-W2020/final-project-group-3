@@ -29,7 +29,7 @@ class cluster_config;
 class log_store;
 class srv_state;
 class state_mgr {
-    __interface_body__(state_mgr);
+    //__interface_body__(state_mgr);
 
 public:
     /**
@@ -57,7 +57,7 @@ public:
      *
      * @param state Server state to save.
      */
-    virtual void save_state(const srv_state& state) = 0;
+    //virtual void save_state(const srv_state& state) = 0;
 
     /**
      * Load the last saved server state.

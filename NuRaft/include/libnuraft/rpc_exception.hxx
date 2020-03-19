@@ -27,7 +27,7 @@ limitations under the License.
 namespace nuraft {
 
 class req_msg;
-class rpc_exception : public std::exception {
+/*class rpc_exception : public std::exception {
 public:
     rpc_exception(const std::string& err, ptr<req_msg> req)
         : req_(req), err_(err.c_str()) {}
@@ -42,7 +42,7 @@ public:
 private:
     ptr<req_msg> req_;
     std::string err_;
-};
+}; */
 
 }
 

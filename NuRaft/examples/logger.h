@@ -202,7 +202,7 @@ public:
         EndOfStmt(LoggerStream& src) { src.put(); }
         EndOfStmt& operator=(LoggerStream& src) { src.put(); return *this; }
     };
-
+/*
     LoggerStream& stream( int level,
                           SimpleLogger* logger,
                           const char* file,
@@ -216,7 +216,7 @@ public:
     EndOfStmt& eos() {
         thread_local EndOfStmt _eos;
         return _eos;
-    }
+    } */
 
 private:
     struct LogElem {

@@ -530,4 +530,3 @@ void raft_server::reset_srv_to_leave() {
 }
 
 } // namespace nuraft;
-

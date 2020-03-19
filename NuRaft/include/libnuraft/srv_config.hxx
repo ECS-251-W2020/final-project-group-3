@@ -58,7 +58,7 @@ public:
         , priority_(priority)
         {}
 
-    __nocopy__(srv_config);
+    //__nocopy__(srv_config);
 
 public:
     static ptr<srv_config> deserialize(buffer& buf);

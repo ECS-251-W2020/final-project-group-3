@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.16.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft
+CMAKE_SOURCE_DIR = /Users/kyko16/final-project-group-3/NuRaft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft/build
+CMAKE_BINARY_DIR = /Users/kyko16/final-project-group-3/NuRaft/build
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/serialization_test.dir/depend.make
@@ -59,16 +59,16 @@ include tests/CMakeFiles/serialization_test.dir/flags.make
 
 tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o: tests/CMakeFiles/serialization_test.dir/flags.make
 tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o: ../tests/unit/serialization_test.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/serialization_test.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/tests && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.o -c /Users/kyko16/final-project-group-3/NuRaft/tests/unit/serialization_test.cxx
 
 tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/serialization_test.cxx > CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/tests && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/tests/unit/serialization_test.cxx > CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.i
 
 tests/CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/serialization_test.cxx -o CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/tests && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/tests/unit/serialization_test.cxx -o CMakeFiles/serialization_test.dir/unit/serialization_test.cxx.s
 
 # Object files for target serialization_test
 serialization_test_OBJECTS = \
@@ -81,8 +81,8 @@ tests/serialization_test: tests/CMakeFiles/serialization_test.dir/unit/serializa
 tests/serialization_test: tests/CMakeFiles/serialization_test.dir/build.make
 tests/serialization_test: libnuraft.a
 tests/serialization_test: tests/CMakeFiles/serialization_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable serialization_test"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serialization_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable serialization_test"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serialization_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/serialization_test.dir/build: tests/serialization_test
@@ -90,10 +90,10 @@ tests/CMakeFiles/serialization_test.dir/build: tests/serialization_test
 .PHONY : tests/CMakeFiles/serialization_test.dir/build
 
 tests/CMakeFiles/serialization_test.dir/clean:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/serialization_test.dir/cmake_clean.cmake
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/serialization_test.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/serialization_test.dir/clean
 
 tests/CMakeFiles/serialization_test.dir/depend:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zixin/Documents/final-project-group-3/NuRaft /Users/zixin/Documents/final-project-group-3/NuRaft/tests /Users/zixin/Documents/final-project-group-3/NuRaft/build /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests /Users/zixin/Documents/final-project-group-3/NuRaft/build/tests/CMakeFiles/serialization_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kyko16/final-project-group-3/NuRaft /Users/kyko16/final-project-group-3/NuRaft/tests /Users/kyko16/final-project-group-3/NuRaft/build /Users/kyko16/final-project-group-3/NuRaft/build/tests /Users/kyko16/final-project-group-3/NuRaft/build/tests/CMakeFiles/serialization_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/serialization_test.dir/depend
 

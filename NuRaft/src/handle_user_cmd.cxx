@@ -190,4 +190,3 @@ ptr< cmd_result< ptr<buffer> > > raft_server::send_msg_to_leader(ptr<req_msg>& r
 }
 
 } // namespace nuraft;
-

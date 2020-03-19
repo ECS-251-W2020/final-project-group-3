@@ -437,7 +437,7 @@ private:
         return res_msg;
     }
     static std::string& getInfoMsg() {
-        thread_local std::string info_msg;
+        pthread_equal; std::string info_msg;
         return info_msg;
     }
     static std::string& getTestName() {
@@ -468,7 +468,7 @@ public:
     }
 
     static void setInfo(const char* format, ...) {
-        thread_local char info_buf[4096];
+        pthread_equal; char info_buf[4096];
         size_t len = 0;
         va_list args;
         va_start(args, format);
@@ -1092,7 +1092,7 @@ public:
         void set(size_t raw_idx, size_t col_idx, const char* format, ...) {
             if (raw_idx >= numRaws || col_idx >= numCols) return;
 
-            thread_local char info_buf[32];
+            pthread_equal; char info_buf[32];
             size_t len = 0;
             va_list args;
             va_start(args, format);
@@ -1166,10 +1166,10 @@ public:
                      ThreadFunc t_func,
                      ThreadExitHandler t_handler)
             : tid(nullptr), handler(nullptr)
-        { spawn(u_args, t_func, t_handler); }
+        //{ spawn(u_args, t_func, t_handler); }
 
-        ~ThreadHolder() { join(true); }
-
+        //~ThreadHolder() { join(true); }
+/*
         void spawn(ThreadArgs* u_args,
                    ThreadFunc t_func,
                    ThreadExitHandler t_handler) {
@@ -1178,7 +1178,7 @@ public:
             args.userArgs = u_args;
             args.func = t_func;
             tid = new std::thread(spawnThread, &args);
-        }
+        } */
 
         void join(bool force = false) {
             if (!tid) return;
@@ -1389,8 +1389,8 @@ template<std::size_t I = 0,
          typename... Tp>
 inline typename std::enable_if<I == sizeof...(Tp), void>::type
 TestArgsSetParamScan(int,
-                     std::tuple<Tp*...> &,
-                     std::tuple<TestRange<Tp>...> &,
+                     //std::tuple<Tp*...> &,
+                     //std::tuple<TestRange<Tp>...> &,
                      FuncT,
                      size_t) { }
 
@@ -1399,8 +1399,8 @@ template<std::size_t I = 0,
          typename... Tp>
 inline typename std::enable_if<I < sizeof...(Tp), void>::type
 TestArgsSetParamScan(int index,
-                     std::tuple<Tp*...>& t,
-                     std::tuple<TestRange<Tp>...>& r,
+                     //std::tuple<Tp*...>& t,
+                     //std::tuple<TestRange<Tp>...>& r,
                      FuncT f,
                      size_t param_idx) {
     if (index == 0) f(std::get<I>(t), std::get<I>(r), param_idx);
@@ -1419,8 +1419,8 @@ template<std::size_t I = 0,
          typename... Tp>
 inline typename std::enable_if<I == sizeof...(Tp), void>::type
 TestArgsGetStepsScan(int,
-                     std::tuple<Tp*...> &,
-                     std::tuple<TestRange<Tp>...> &,
+                     //std::tuple<Tp*...> &,
+                     //std::tuple<TestRange<Tp>...> &,
                      FuncT,
                      size_t) { }
 
@@ -1429,8 +1429,8 @@ template<std::size_t I = 0,
          typename... Tp>
 inline typename std::enable_if<I < sizeof...(Tp), void>::type
 TestArgsGetStepsScan(int index,
-                     std::tuple<Tp*...>& t,
-                     std::tuple<TestRange<Tp>...>& r,
+                     //std::tuple<Tp*...>& t,
+                     //std::tuple<TestRange<Tp>...>& r,
                      FuncT f,
                      size_t& steps_ret) {
     if (index == 0) f(std::get<I>(t), std::get<I>(r), steps_ret);

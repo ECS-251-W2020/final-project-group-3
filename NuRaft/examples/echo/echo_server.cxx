@@ -90,13 +90,15 @@ void append_log(const std::string& cmd,
 
     // Do append.
     ptr<raft_result> ret = stuff.raft_instance_->append_entries( {new_log} );
-    if (!ret->get_accepted()) {
-        // Log append rejected, usually because this node is not a leader.
-        std::cout << "failed to replicate: "
-                  << ret->get_result_code() << ", "
-                  << TestSuite::usToString( timer->getTimeUs() )
-                  << std::endl;
-        return;
+    if (cmd != "msg") { //make sure this doesn't show when sending a message
+        if (!ret->get_accepted()) {
+            // Log append rejected, usually because this node is not a leader.
+            std::cout << "failed to replicate: "
+                      << ret->get_result_code() << ", "
+                      << TestSuite::usToString( timer->getTimeUs() )
+                      << std::endl;
+            return;
+        }
     }
     // Log append accepted, but that doesn't mean the log is committed.
     // Commit result can be obtained below.

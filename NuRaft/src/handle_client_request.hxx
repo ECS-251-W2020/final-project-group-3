@@ -47,4 +47,3 @@ struct raft_server::commit_ret_elem {
 };
 
 } // namespace nuraft;
-

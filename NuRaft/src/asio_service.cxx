@@ -1627,4 +1627,3 @@ ptr<rpc_listener> asio_service::create_rpc_listener( ushort listening_port,
         return nullptr;
     }
 }
-

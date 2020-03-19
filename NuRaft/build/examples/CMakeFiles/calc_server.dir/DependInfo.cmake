@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/zixin/Documents/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx" "/Users/zixin/Documents/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o"
-  "/Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx" "/Users/zixin/Documents/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o"
-  "/Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc" "/Users/zixin/Documents/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/logger.cc.o"
+  "/Users/kyko16/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx" "/Users/kyko16/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o"
+  "/Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx" "/Users/kyko16/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o"
+  "/Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc" "/Users/kyko16/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/logger.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

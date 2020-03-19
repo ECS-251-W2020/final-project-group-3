@@ -208,7 +208,7 @@ public:
      * Get the result of replication in human-readable form.
      *
      * @return Result string.
-     */
+     */ /*
     std::string get_result_str() const {
         cmd_result_code code = get_result_code();
 
@@ -242,7 +242,7 @@ public:
             return "Unknown (" + std::to_string((int)code) + ").";
         }
         return entry->second;
-    }
+    } */
 
     /**
      * Get the result value.

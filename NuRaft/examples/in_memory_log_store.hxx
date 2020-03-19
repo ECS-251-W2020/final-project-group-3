@@ -43,9 +43,9 @@ public:
 
     void write_at(ulong index, ptr<log_entry>& entry);
 
-    ptr<std::vector<ptr<log_entry>>> log_entries(ulong start, ulong end);
+    ptr<std::vector<ptr<log_entry> > > log_entries(ulong start, ulong end);
 
-    ptr<std::vector<ptr<log_entry>>> log_entries_ext(
+    ptr<std::vector<ptr<log_entry> > > log_entries_ext(
             ulong start, ulong end, ulong batch_size_hint_in_bytes = 0);
 
     ptr<log_entry> entry_at(ulong index);
@@ -65,7 +65,7 @@ public:
 private:
     static ptr<log_entry> make_clone(const ptr<log_entry>& entry);
 
-    std::map<ulong, ptr<log_entry>> logs_;
+    std::map<ulong, ptr<log_entry> > logs_;
     mutable std::mutex logs_lock_;
     std::atomic<ulong> start_idx_;
 };

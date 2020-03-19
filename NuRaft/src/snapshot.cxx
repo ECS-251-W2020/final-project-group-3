@@ -51,4 +51,3 @@ ptr<buffer> snapshot::serialize() {
 }
 
 } // namespace nuraft;
-

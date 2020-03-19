@@ -47,4 +47,3 @@ public:
     asio::ip::tcp::socket& socket_;
     mock_ssl_context& context_;
 };
-

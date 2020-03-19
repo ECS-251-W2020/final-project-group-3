@@ -413,4 +413,3 @@ std::istream& nuraft::operator >> (std::istream& in, buffer& buf) {
 
     return in;
 }
-

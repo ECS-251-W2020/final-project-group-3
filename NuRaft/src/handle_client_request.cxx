@@ -246,4 +246,3 @@ void raft_server::drop_all_pending_commit_elems() {
 }
 
 } // namespace nuraft;
-

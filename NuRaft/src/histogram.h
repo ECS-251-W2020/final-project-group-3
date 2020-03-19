@@ -322,4 +322,3 @@ private:
 uint64_t HistItr::getCount() {
     return owner->bins[idx];
 }
-

@@ -536,4 +536,3 @@ bool raft_server::handle_snapshot_sync_req(snapshot_sync_req& req) {
 }
 
 } // namespace nuraft;
-

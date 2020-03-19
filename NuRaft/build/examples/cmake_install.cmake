@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zixin/Documents/final-project-group-3/NuRaft/examples
+# Install script for directory: /Users/kyko16/final-project-group-3/NuRaft/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -233,4 +233,3 @@ void raft_server::update_target_priority() {
 }
 
 } // namespace nuraft;
-

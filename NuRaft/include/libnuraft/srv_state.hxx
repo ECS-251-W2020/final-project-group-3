@@ -41,10 +41,10 @@ public:
         , voted_for_(voted_for)
         , election_timer_allowed_(et_allowed)
         {}
+    
+    //__nocopy__(srv_state);
 
-    __nocopy__(srv_state);
-
-public:
+public: /*
     static ptr<srv_state> deserialize(buffer& buf) {
         if (buf.size() > sz_ulong + sz_int) {
             return deserialize_v1p(buf);
@@ -67,7 +67,7 @@ public:
         int voted_for = bs.get_i32();
         bool et_allowed = (bs.get_u8() == 1);
         return cs_new<srv_state>(term, voted_for, et_allowed);
-    }
+    } */
 
     ulong   get_term() const        { return term_; }
     void    set_term(ulong term)    { term_ = term; }
@@ -113,6 +113,7 @@ public:
         bs.put_u8( election_timer_allowed_ ? 1 : 0 );
         return buf;
     }
+    
 
 private:
     const uint8_t CURRENT_VERSION = 1;

@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.16.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft
+CMAKE_SOURCE_DIR = /Users/kyko16/final-project-group-3/NuRaft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft/build
+CMAKE_BINARY_DIR = /Users/kyko16/final-project-group-3/NuRaft/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/shared_lib.dir/depend.make
@@ -62,29 +62,29 @@ shared_lib_OBJECTS =
 
 # External object files for target shared_lib
 shared_lib_EXTERNAL_OBJECTS = \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/asio_service.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/buffer.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/buffer_serializer.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/cluster_config.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/crc32.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/error_code.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_append_entries.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_client_request.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_custom_notification.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_commit.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_join_leave.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_priority.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_snapshot_sync.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_timeout.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_user_cmd.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_vote.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/launcher.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/peer.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/raft_server.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/snapshot.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/snapshot_sync_req.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/srv_config.cxx.o" \
-"/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/stat_mgr.cxx.o"
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/asio_service.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/buffer.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/buffer_serializer.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/cluster_config.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/crc32.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/error_code.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_append_entries.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_client_request.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_custom_notification.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_commit.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_join_leave.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_priority.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_snapshot_sync.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_timeout.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_user_cmd.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/handle_vote.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/launcher.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/peer.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/raft_server.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/snapshot.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/snapshot_sync_req.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/srv_config.cxx.o" \
+"/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/RAFT_CORE_OBJ.dir/src/stat_mgr.cxx.o"
 
 libnuraft.dylib: CMakeFiles/RAFT_CORE_OBJ.dir/src/asio_service.cxx.o
 libnuraft.dylib: CMakeFiles/RAFT_CORE_OBJ.dir/src/buffer.cxx.o
@@ -113,7 +113,7 @@ libnuraft.dylib: CMakeFiles/shared_lib.dir/build.make
 libnuraft.dylib: /usr/local/opt/openssl/lib/libssl.a
 libnuraft.dylib: /usr/local/opt/openssl/lib/libcrypto.a
 libnuraft.dylib: CMakeFiles/shared_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX shared library libnuraft.dylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX shared library libnuraft.dylib"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shared_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,6 +126,6 @@ CMakeFiles/shared_lib.dir/clean:
 .PHONY : CMakeFiles/shared_lib.dir/clean
 
 CMakeFiles/shared_lib.dir/depend:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zixin/Documents/final-project-group-3/NuRaft /Users/zixin/Documents/final-project-group-3/NuRaft /Users/zixin/Documents/final-project-group-3/NuRaft/build /Users/zixin/Documents/final-project-group-3/NuRaft/build /Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles/shared_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kyko16/final-project-group-3/NuRaft /Users/kyko16/final-project-group-3/NuRaft /Users/kyko16/final-project-group-3/NuRaft/build /Users/kyko16/final-project-group-3/NuRaft/build /Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles/shared_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/shared_lib.dir/depend
 

@@ -48,4 +48,3 @@ const char * raft_err_msg[] = {
 };
 
 } // namespace nuraft;
-

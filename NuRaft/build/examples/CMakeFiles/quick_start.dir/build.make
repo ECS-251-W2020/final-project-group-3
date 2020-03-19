@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.16.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft
+CMAKE_SOURCE_DIR = /Users/kyko16/final-project-group-3/NuRaft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft/build
+CMAKE_BINARY_DIR = /Users/kyko16/final-project-group-3/NuRaft/build
 
 # Include any dependencies generated for this target.
 include examples/CMakeFiles/quick_start.dir/depend.make
@@ -59,42 +59,42 @@ include examples/CMakeFiles/quick_start.dir/flags.make
 
 examples/CMakeFiles/quick_start.dir/quick_start.cxx.o: examples/CMakeFiles/quick_start.dir/flags.make
 examples/CMakeFiles/quick_start.dir/quick_start.cxx.o: ../examples/quick_start.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/CMakeFiles/quick_start.dir/quick_start.cxx.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/quick_start.dir/quick_start.cxx.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/examples/quick_start.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/CMakeFiles/quick_start.dir/quick_start.cxx.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/quick_start.dir/quick_start.cxx.o -c /Users/kyko16/final-project-group-3/NuRaft/examples/quick_start.cxx
 
 examples/CMakeFiles/quick_start.dir/quick_start.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/quick_start.dir/quick_start.cxx.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/examples/quick_start.cxx > CMakeFiles/quick_start.dir/quick_start.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/examples/quick_start.cxx > CMakeFiles/quick_start.dir/quick_start.cxx.i
 
 examples/CMakeFiles/quick_start.dir/quick_start.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/quick_start.dir/quick_start.cxx.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/examples/quick_start.cxx -o CMakeFiles/quick_start.dir/quick_start.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/examples/quick_start.cxx -o CMakeFiles/quick_start.dir/quick_start.cxx.s
 
 examples/CMakeFiles/quick_start.dir/logger.cc.o: examples/CMakeFiles/quick_start.dir/flags.make
 examples/CMakeFiles/quick_start.dir/logger.cc.o: ../examples/logger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/CMakeFiles/quick_start.dir/logger.cc.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/quick_start.dir/logger.cc.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/CMakeFiles/quick_start.dir/logger.cc.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/quick_start.dir/logger.cc.o -c /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc
 
 examples/CMakeFiles/quick_start.dir/logger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/quick_start.dir/logger.cc.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc > CMakeFiles/quick_start.dir/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc > CMakeFiles/quick_start.dir/logger.cc.i
 
 examples/CMakeFiles/quick_start.dir/logger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/quick_start.dir/logger.cc.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc -o CMakeFiles/quick_start.dir/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc -o CMakeFiles/quick_start.dir/logger.cc.s
 
 examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o: examples/CMakeFiles/quick_start.dir/flags.make
 examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o: ../examples/in_memory_log_store.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/quick_start.dir/in_memory_log_store.cxx.o -c /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
 
 examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/quick_start.dir/in_memory_log_store.cxx.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx > CMakeFiles/quick_start.dir/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx > CMakeFiles/quick_start.dir/in_memory_log_store.cxx.i
 
 examples/CMakeFiles/quick_start.dir/in_memory_log_store.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/quick_start.dir/in_memory_log_store.cxx.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx -o CMakeFiles/quick_start.dir/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx -o CMakeFiles/quick_start.dir/in_memory_log_store.cxx.s
 
 # Object files for target quick_start
 quick_start_OBJECTS = \
@@ -113,8 +113,8 @@ examples/quick_start: libnuraft.a
 examples/quick_start: /usr/local/opt/openssl/lib/libssl.a
 examples/quick_start: /usr/local/opt/openssl/lib/libcrypto.a
 examples/quick_start: examples/CMakeFiles/quick_start.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable quick_start"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/quick_start.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable quick_start"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/quick_start.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/CMakeFiles/quick_start.dir/build: examples/quick_start
@@ -122,10 +122,10 @@ examples/CMakeFiles/quick_start.dir/build: examples/quick_start
 .PHONY : examples/CMakeFiles/quick_start.dir/build
 
 examples/CMakeFiles/quick_start.dir/clean:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -P CMakeFiles/quick_start.dir/cmake_clean.cmake
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -P CMakeFiles/quick_start.dir/cmake_clean.cmake
 .PHONY : examples/CMakeFiles/quick_start.dir/clean
 
 examples/CMakeFiles/quick_start.dir/depend:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zixin/Documents/final-project-group-3/NuRaft /Users/zixin/Documents/final-project-group-3/NuRaft/examples /Users/zixin/Documents/final-project-group-3/NuRaft/build /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples/CMakeFiles/quick_start.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kyko16/final-project-group-3/NuRaft /Users/kyko16/final-project-group-3/NuRaft/examples /Users/kyko16/final-project-group-3/NuRaft/build /Users/kyko16/final-project-group-3/NuRaft/build/examples /Users/kyko16/final-project-group-3/NuRaft/build/examples/CMakeFiles/quick_start.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/CMakeFiles/quick_start.dir/depend
 

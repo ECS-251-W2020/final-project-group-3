@@ -207,4 +207,3 @@ void raft_server::reset_all_stats() {
 }
 
 } // namespace nuraft
-

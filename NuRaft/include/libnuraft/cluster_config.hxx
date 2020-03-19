@@ -52,8 +52,8 @@ public:
     __nocopy__(cluster_config);
 
 public:
-    typedef std::list<ptr<srv_config>>::iterator srv_itor;
-    typedef std::list<ptr<srv_config>>::const_iterator const_srv_itor;
+    typedef std::list<ptr<srv_config> >::iterator srv_itor;
+    typedef std::list<ptr<srv_config> >::const_iterator const_srv_itor;
 
     static ptr<cluster_config> deserialize(buffer& buf);
 
@@ -72,7 +72,7 @@ public:
         return prev_log_idx_;
     }
 
-    std::list<ptr<srv_config>>& get_servers() {
+    std::list<ptr<srv_config> >& get_servers() {
         return servers_;
     }
 
@@ -113,7 +113,7 @@ private:
     std::string user_ctx_;
 
     // List of servers.
-    std::list<ptr<srv_config>> servers_;
+    std::list< ptr<srv_config> > servers_;
 };
 
 } // namespace nuraft

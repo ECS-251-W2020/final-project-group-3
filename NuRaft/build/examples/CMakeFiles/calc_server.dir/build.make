@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.16.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft
+CMAKE_SOURCE_DIR = /Users/kyko16/final-project-group-3/NuRaft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zixin/Documents/final-project-group-3/NuRaft/build
+CMAKE_BINARY_DIR = /Users/kyko16/final-project-group-3/NuRaft/build
 
 # Include any dependencies generated for this target.
 include examples/CMakeFiles/calc_server.dir/depend.make
@@ -59,42 +59,42 @@ include examples/CMakeFiles/calc_server.dir/flags.make
 
 examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o: examples/CMakeFiles/calc_server.dir/flags.make
 examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o: ../examples/calculator/calc_server.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calc_server.dir/calculator/calc_server.cxx.o -c /Users/kyko16/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx
 
 examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/calc_server.dir/calculator/calc_server.cxx.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx > CMakeFiles/calc_server.dir/calculator/calc_server.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx > CMakeFiles/calc_server.dir/calculator/calc_server.cxx.i
 
 examples/CMakeFiles/calc_server.dir/calculator/calc_server.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/calc_server.dir/calculator/calc_server.cxx.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx -o CMakeFiles/calc_server.dir/calculator/calc_server.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/examples/calculator/calc_server.cxx -o CMakeFiles/calc_server.dir/calculator/calc_server.cxx.s
 
 examples/CMakeFiles/calc_server.dir/logger.cc.o: examples/CMakeFiles/calc_server.dir/flags.make
 examples/CMakeFiles/calc_server.dir/logger.cc.o: ../examples/logger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/CMakeFiles/calc_server.dir/logger.cc.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calc_server.dir/logger.cc.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/CMakeFiles/calc_server.dir/logger.cc.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calc_server.dir/logger.cc.o -c /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc
 
 examples/CMakeFiles/calc_server.dir/logger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/calc_server.dir/logger.cc.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc > CMakeFiles/calc_server.dir/logger.cc.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc > CMakeFiles/calc_server.dir/logger.cc.i
 
 examples/CMakeFiles/calc_server.dir/logger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/calc_server.dir/logger.cc.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/examples/logger.cc -o CMakeFiles/calc_server.dir/logger.cc.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/examples/logger.cc -o CMakeFiles/calc_server.dir/logger.cc.s
 
 examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o: examples/CMakeFiles/calc_server.dir/flags.make
 examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o: ../examples/in_memory_log_store.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o -c /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calc_server.dir/in_memory_log_store.cxx.o -c /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx
 
 examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/calc_server.dir/in_memory_log_store.cxx.i"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx > CMakeFiles/calc_server.dir/in_memory_log_store.cxx.i
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx > CMakeFiles/calc_server.dir/in_memory_log_store.cxx.i
 
 examples/CMakeFiles/calc_server.dir/in_memory_log_store.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/calc_server.dir/in_memory_log_store.cxx.s"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zixin/Documents/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx -o CMakeFiles/calc_server.dir/in_memory_log_store.cxx.s
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyko16/final-project-group-3/NuRaft/examples/in_memory_log_store.cxx -o CMakeFiles/calc_server.dir/in_memory_log_store.cxx.s
 
 # Object files for target calc_server
 calc_server_OBJECTS = \
@@ -113,8 +113,8 @@ examples/calc_server: libnuraft.a
 examples/calc_server: /usr/local/opt/openssl/lib/libssl.a
 examples/calc_server: /usr/local/opt/openssl/lib/libcrypto.a
 examples/calc_server: examples/CMakeFiles/calc_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zixin/Documents/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable calc_server"
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calc_server.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kyko16/final-project-group-3/NuRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable calc_server"
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calc_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/CMakeFiles/calc_server.dir/build: examples/calc_server
@@ -122,10 +122,10 @@ examples/CMakeFiles/calc_server.dir/build: examples/calc_server
 .PHONY : examples/CMakeFiles/calc_server.dir/build
 
 examples/CMakeFiles/calc_server.dir/clean:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -P CMakeFiles/calc_server.dir/cmake_clean.cmake
+	cd /Users/kyko16/final-project-group-3/NuRaft/build/examples && $(CMAKE_COMMAND) -P CMakeFiles/calc_server.dir/cmake_clean.cmake
 .PHONY : examples/CMakeFiles/calc_server.dir/clean
 
 examples/CMakeFiles/calc_server.dir/depend:
-	cd /Users/zixin/Documents/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zixin/Documents/final-project-group-3/NuRaft /Users/zixin/Documents/final-project-group-3/NuRaft/examples /Users/zixin/Documents/final-project-group-3/NuRaft/build /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples /Users/zixin/Documents/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/kyko16/final-project-group-3/NuRaft/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kyko16/final-project-group-3/NuRaft /Users/kyko16/final-project-group-3/NuRaft/examples /Users/kyko16/final-project-group-3/NuRaft/build /Users/kyko16/final-project-group-3/NuRaft/build/examples /Users/kyko16/final-project-group-3/NuRaft/build/examples/CMakeFiles/calc_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/CMakeFiles/calc_server.dir/depend
 

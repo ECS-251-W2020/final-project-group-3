@@ -454,13 +454,13 @@ direct.h
 Windows.h
 -
 
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/stat_mgr_test.cxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/stat_mgr_test.cxx
 nuraft.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/nuraft.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/nuraft.hxx
 stat_mgr.hxx
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/stat_mgr.hxx
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/stat_mgr.hxx
 test_common.h
-/Users/zixin/Documents/final-project-group-3/NuRaft/tests/unit/test_common.h
+/Users/kyko16/final-project-group-3/NuRaft/tests/unit/test_common.h
 cstring
 -
 random

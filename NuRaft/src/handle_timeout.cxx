@@ -342,4 +342,3 @@ void raft_server::cancel_task(ptr<delayed_task>& task) {
 }
 
 }// namespace nuraft;
-
