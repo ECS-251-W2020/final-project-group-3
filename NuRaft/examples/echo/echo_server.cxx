@@ -187,7 +187,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
         if (myId == stuff.raft_instance_->get_leader()){
             
             stuff.raft_instance_->yield_leadership(true);
-            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+            std::this_thread::sleep_for(std::chrono::milliseconds(800));
 
         }
 
@@ -201,7 +201,7 @@ bool do_cmd(const std::vector<std::string>& tokens) {
         req->log_entries().push_back(log);
         stuff.raft_instance_->send_msg_to_leader(req);
             
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(800));
         stuff.launcher_.shutdown(5);
         
     }
