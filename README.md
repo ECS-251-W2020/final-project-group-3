@@ -27,12 +27,12 @@ by Andy Chen)
     └── ...
 
 The Raft Chat project is comprised of the `chat app` and the `central server`. All related
-files currently reside in the NuRaft folder. (*those related to the app under examples and include,
+files currently reside in the NuRaft folder. (*those related to the app are under examples and include,
 while the central server file is at the base*)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine and remote
+These instructions will get you a copy of the project up and running on your local machine and/or remote
 servers for development and testing purposes.
 
 ### Prerequisites
@@ -48,7 +48,7 @@ The following dependencies are required:
   libssl-dev 
 ```
 
-### Installion 
+### Installation 
 
 You must first install [NuRaft](./NuRaft/README.md)
 
@@ -80,8 +80,8 @@ For testing on localhost, can type in separate terminal windows:
 ./echo_server 2 localhost:10002
 ```
 
-You well then be greeted by a prompt. As this is run locally, the central server
-with not be active. To add other clients to the lobby, type:
+You will then be greeted by a prompt. As this is run locally, the central server
+will not be active. To add other clients to the lobby, type:
 ```
 add [server number] [IP Address]
 ```
