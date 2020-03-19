@@ -1,95 +1,99 @@
-# final-project-group-3
+# Raft Chat
 
-Project: Implement a peer-to-peer Raft chat application
+A peer-to-peer Raft chat application that provides a more durable and private platform during disaster scenarios. 
+By utilizing the Raft concensus protocol, we have a decentralized way for having consistent chat messages
+across devices/users that can handle crash faults. NuRaft, a lightweight C++ Raft library
+written by Gene Zhang and Jung-Sang Ahn of eBay, was used as a foundation. (The authors based their work on prior work
+by Andy Chen)
 
-Why?
- Provide a distributed chat application that is more durable and private. Raft provides a decentralized way for having consistent data across devices/users that can handle crash faults.
-How? 
-Building off an existing Raft implementation (NuRaft).
+## Code Structure
+    .
+    ├── NuRaft 
+    |   ├── examples 
+    |   │   ├── central_server.hxx           # Central Server API Header
+    |   │   ├── central_server.cxx           # Central Server API Implementation
+    |   │   ├── central_server_common.hxx    # Contains shared CS functions & variables
+    |   │   ├── example_common.hxx           # Helper functions and main user interface loop
+    |   │   ├── echo
+    |   |   │   ├── echo_server.cxx          # Entry point for app
+    |   |   │   ├── echo_state_machine.hxx   # Modified for evaluations
+    |   |   |   └── ... 
+    |   │   └── ...
+    |   ├── include 
+    |   │   ├── libnuraft                    # Controls forwarding from follower to leaders
+    |   │   └── ...
+    |   ├── blocking_tcp_echo_server.cpp     # Central Server program
+    |   └── ...
+    └── ...
 
-NuRaft is a lightweight Raft library written by Gene Zhang and Jung-Sang Ahn of EBay.  The authors based their work on prior work by Andy Chen. 
+The Raft Chat project is comprised of the `chat app` and the `central server`. All related
+files currently reside in the NuRaft folder. (*those related to the app under examples and include,
+while the central server file is at the base*)
 
-# Instructions
+## Getting Started
 
-Build NuRaft (see below).
+These instructions will get you a copy of the project up and running on your local machine and remote
+servers for development and testing purposes.
 
-Change directory to NuRaft/build/examples.
+### Prerequisites
 
-Run echo_server as follows:
+The following dependencies are required:
 
-./echo_server [server number] [IP Address]
+```
+  build-essential \
+  zlib1g          \
+  zlib1g-dev      \
+  cmake           \
+  openssl         \
+  libssl-dev 
+```
 
-For testing on localhost, can type "./echo_server 1 localhost:10001" etc.  
+### Installion 
 
-To run a second instance, open a new terminal window.  CD to /examples.  Type "./echo_server 2 localhost:10002".
+You must first install [NuRaft](./NuRaft/README.md)
 
-Will be greeted by prompt.
+Then you must build the central server code:
+```
+  cd NuRaft
+  make asio_server
+```
 
-To add other servers to cluster, type "add [server number] [IP Address]".  
+### Deployment
+
+To run a lobby of clients, you must run this on seperate machines:
+```
+  cd NuRaft/build/examples
+  ./echo_server [server number] [IP Address]:[port number]
+```
+
+Then you want to run the central server:
+```
+  cd NuRaft
+  ./asio_server [port number]
+```
+
+This allows for auto joining between clients and lobbies
+
+For testing on localhost, can type in separate terminal windows: 
+```
+./echo_server 1 localhost:10001  
+./echo_server 2 localhost:10002
+```
+
+You well then be greeted by a prompt. As this is run locally, the central server
+with not be active. To add other clients to the lobby, type:
+```
+add [server number] [IP Address]
+```
 
 Server that adds others is initial leader (only leader can add).
 
-To send message type "msg [message text]".
-
-To leave chat, type "leave".
-
-# NuRaft
-
-New features that are not described in the [original paper](https://raft.github.io/raft.pdf), but required for the real-world use cases in eBay, have been added. NuRaft authors believe those features are useful for others outside eBay as well.
-
-How to Build
-------------
-#### 1. Install `cmake` and `openssl`: ####
-
-* Ubuntu
-```sh
-$ sudo apt-get install cmake
-$ sudo apt-get install openssl libssl-dev
+To send message type: 
+```
+msg [message text]
 ```
 
-* OSX
-```sh
-$ brew install cmake
-$ brew install openssl
+To leave chat, type: 
 ```
-* Windows
-    * Download and install [CMake](https://cmake.org/download/).
-    * Currently, we do not support SSL for Windows.
-
-#### 2. Fetch [Asio](https://github.com/chriskohlhoff/asio) library: ####
-
-* Linux & OSX
-```sh
-$ ./prepare.sh
+leave
 ```
-* Windows
-    * Clone [Asio](https://github.com/chriskohlhoff/asio) into the project directory.
-
-#### 3. Build static library, tests, and examples: ####
-
-* Linux & OSX
-```sh
-$ mkdir build
-$ cd build
-build$ cmake ../
-build$ make
-```
-
-Run unit tests
-```sh
-build$ ./runtests.sh
-```
-
-* Windows:
-```sh
-C:\NuRaft> mkdir build
-C:\NuRaft> cd build
-C:\NuRaft\build> cmake -G "NMake Makefiles" ..\
-C:\NuRaft\build> nmake
-```
-
-You may need to run `vcvars` script first in your `build` directory. For example (it depends on how you installed MSVC):
-```sh
-C:\NuRaft\build> c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat
-```
-
